@@ -1,0 +1,23 @@
+
+/* =============================================================
+   Merged additions from File B (non-conflicting, append-only)
+   Keep File A as primary. This block only adds new utilities.
+   ============================================================= */
+
+/* --- Extra background utility classes --- */
+.tertiary-bg { background-color: #FAFDFA !important; }
+.fourth-bg   { background-color: #E5D8CE !important; }
+.fifth-bg    { background-color: #f7f7f7 !important; }
+
+/* --- Extra inner background helper --- */
+.inner-sub-bg-two { background-color: #f7f7f7 !important; }
+
+/* --- Medium font utility (used on dark sections) --- */
+.med-font {
+  font-size: 24px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* --- Safety: Do not change typography or variables from File A --- */
+/* This section intentionally avoids redefining :root, body, h1–h6, or shared classes. */
