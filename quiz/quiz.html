@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Brand Readiness Quiz • Abstract Creative</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="2-minute brand readiness quiz by Abstract Creative. Diagnose your brand across Identity, Communication, Optimization, and Navigation, then get a tailored plan.">
+  <style>
+    :root{
+      --orange:#ef4237;
+      --dark-orange:#d13833;
+      --light-orange:#ed7b39;
+      --yellow:#f0ad1e;
+      --dark-blue:#112B32;
+      --teal:#183C44;
+      --beige:#E5D8CE;
+      --light:#F7F7F7;
+      --black:#010101;
+      --gray:#454445;
+      --radius:16px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:linear-gradient(180deg,#fff 0%, #F7F7F7 100%);color:#111}
+    .wrap{max-width:900px;margin:40px auto;padding:24px}
+    .card{background:#fff;border:1px solid #eee;border-radius:var(--radius);box-shadow:0 10px 30px rgba(0,0,0,.06)}
+    .hero{padding:28px 28px 20px;border-radius:var(--radius);background:
+      radial-gradient(1200px 400px at -10% -50%, rgba(241,108,91,.15), transparent 40%),
+      linear-gradient(180deg,#fff, #fff)}
+    .brand{display:flex;gap:10px;align-items:center}
+    .logo{width:12px;height:12px;border-radius:3px;background:linear-gradient(45deg,var(--dark-orange),var(--orange));box-shadow:0 0 0 4px rgba(239,66,55,.1)}
+    h1{margin:6px 0 10px;color:var(--dark-blue);font-size:28px;letter-spacing:.2px}
+    p.lead{margin:0;color:#333}
+    .badge{display:inline-block;background:var(--beige);color:var(--dark-blue);padding:6px 10px;border-radius:999px;font-size:12px;margin-top:10px}
+    .progress{height:8px;background:#eee;border-radius:999px;overflow:hidden}
+    .bar{height:100%;width:0;background:linear-gradient(90deg,var(--orange),var(--yellow));transition:width .35s}
+    .q{padding:22px 24px;border-top:1px solid #f0f0f0}
+    .q h3{margin:0 0 8px;font-size:18px;color:#111}
+    .q small{color:#666}
+    .opts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:12px}
+    .opt{border:1px solid #e8e8e8;border-radius:12px;padding:12px;cursor:pointer;transition:.2s;background:#fff}
+    .opt:hover{border-color:var(--orange);box-shadow:0 6px 18px rgba(0,0,0,.06)}
+    .opt input{margin-right:8px}
+    .footer{padding:18px 24px;display:flex;gap:12px;align-items:center;justify-content:space-between;border-top:1px solid #f0f0f0}
+    .btn{appearance:none;border:0;border-radius:12px;padding:12px 18px;font-weight:600;cursor:pointer}
+    .btn-primary{background:var(--orange);color:#fff}
+    .btn-primary:disabled{opacity:.4;cursor:not-allowed}
+    .btn-ghost{background:#fff;border:1px solid #e8e8e8}
+    .note{font-size:12px;color:#666}
+    .hidden{display:none !important}
+    .pill{display:inline-block;font-size:12px;padding:6px 10px;border-radius:999px;background:#f5f5f5;color:#333;margin-right:6px}
+    .result{padding:24px}
+    .result h2{margin:0 0 4px;font-size:24px;color:var(--dark-blue)}
+    .tier{font-weight:800}
+    .rec{border-left:4px solid var(--orange);padding-left:14px;margin:14px 0;color:#222}
+    .grid2{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}
+    .panel{border:1px solid #eee;border-radius:12px;padding:16px;background:#fff}
+    .cta{display:flex;gap:10px;flex-wrap:wrap}
+    .kpis{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+    .kpi{background:#fff;border:1px dashed #eee;border-radius:10px;padding:8px 10px;font-size:12px}
+    .brandbar{display:flex;gap:6px;flex-wrap:wrap}
+    .brandbar .pill{background:linear-gradient(90deg,#112B32,#183C44);color:#fff}
+    @media (max-width:720px){.opts{grid-template-columns:1fr}.grid2{grid-template-columns:1fr}}
+    /* Orange focus outline for accessibility */
+    :focus-visible{outline:3px solid var(--orange);outline-offset:2px;border-radius:8px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card hero">
+      <div class="brand"><span class="logo"></span><strong>Abstract Creative</strong></div>
+      <h1>Is your brand ready to scale?</h1>
+      <p class="lead">Take our 2-minute ICON quiz. Diagnose where you’re stuck across Identity, Communication, Optimization, and Navigation—then get a tailored plan with investment & timeline.</p>
+      <span class="badge">No fluff. Actionable next steps.</span>
+      <div style="margin:16px 0 0">
+        <div class="progress"><div class="bar" id="bar"></div></div>
+        <div class="brandbar" style="margin-top:10px">
+          <span class="pill">Identity</span><span class="pill">Communication</span><span class="pill">Optimization</span><span class="pill">Navigation</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quiz Form (Netlify-ready). Replace with HubSpot if needed -->
+    <form name="icon-quiz" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="quiz" class="card" style="margin-top:16px">
+      <input type="hidden" name="form-name" value="icon-quiz">
+      <p class="hidden"><label>Don’t fill this out: <input name="bot-field"></label></p>
+
+      <!-- Q1–Q12 map to ICON (3 each). Radio options carry weights for phases -->
+      <!-- Identity -->
+      <div class="q" data-phase="Identity">
+        <h3>1) How clear is your brand positioning right now?</h3>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="q1" value="I2"> We need to define it from scratch</label>
+          <label class="opt"><input type="radio" name="q1" value="I1"> It’s fuzzy/inconsistent across the team</label>
+          <label class="opt"><input type="radio" name="q1" value="I0"> Clear and documented</label>
+          <label class="opt"><input type="radio" name="q1" value="I1"> Mostly clear, not documented</label>
+        </div>
+      </div>
+      <div class="q" data-phase="Identity">
+        <h3>2) Visual identity (logo, type, color) reflects who we are:</h3>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="q2" value="I2"> Outdated/misaligned</label>
+          <label class="opt"><input type="radio" name="q2" value="I1"> Partially aligned</label>
+          <label class="opt"><input type="radio" name="q2" value="I0"> Fully aligned and consistent</label>
+          <label class="opt"><input type="radio" name="q2" value="I1"> Looks fine, no guidelines</label>
+        </div>
+      </div>
+      <div class="q" data-phase="Identity">
+        <h3>3) Buyer personas & priorities:</h3>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="q3" value="I2"> Not defined</label>
+          <label class="opt"><input type="radio" name="q3" value="I1"> Defined but unused</label>
+          <label class="opt"><input type="radio" name="q3" value="I0"> Defined, validated, used</label>
+          <label class="opt"><input type="radio" name="q3" value="I1"> We have assumptions only</label>
+        </div>
+      </div>
+
+      <!-- Communication -->
+      <div class="q" data-phase="Communication">
+        <h3>4) Messaging consistency across channels:</h3>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="q4" value="C2"> Inconsistent and ad-hoc</label>
+          <label class="opt"><input type="radio" name="q4" value="C1"> Some guidelines, not enforced</label>
+          <label class="opt"><input type="radio" name="q4" value="C0"> Consistent + documented playbook</label>
+          <label class="opt"><input type="radio" name="q4" value="C1"> Consistent but undocumented</label>
+        </div>
+      </div>
+      <div class="q" data-phase="Communication">
+        <h3>5) Website/funnel copy converts:</h3>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="q5" value="C2"> We’re guessing</label>
+          <label class="opt"><input type="radio" name="q5" value="C1"> Some wins, inconsistent</label>
+          <label class="opt"><input type="radio" name="q5" value="C0"> Strong, tested, high converting</label>
+          <label class="opt"><input type="radio" name="q5" value="C1"> We haven’t tested</label>
+        </div>
+      </div>
+      <div class="q" data-phase="Communication">
+        <h3>6) Content/campaign rhythm:</h3>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="q6" value="C2"> Irregular</label>
+          <label class="opt"><input type="radio" name="q6" value="C1"> Quarterly at best</label>
+          <label class="opt"><input type="radio" name="q6" value="C0"> Consistent calendar + KPIs</label>
+          <label class="opt"><input type="radio" name="q6" value="C1"> Consistent, no KPIs</label>
+        </div>
+      </div>
+
+      <!-- Optimization -->
+      <div class="q" data-phase="Optimization">
+        <h3>7) Website & UX performance:</h3>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="q7" value="O2"> Slow/outdated</label>
+          <label class="opt"><input type="radio" name="q7" value="O1"> Mixed results</label>
+          <label class="opt"><input type="radio" name="q7" value="O0"> Fast, responsive, optimized</label>
+          <label class="opt"><input type="radio" name="q7" value="O1"> Looks good, lacks data</label>
+        </div>
+      </div>
+      <div class="q" data-phase="Optimization">
+        <h3>8) CRM & automation:</h3>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="q8" value="O2"> None</label>
+          <label class="opt"><input type="radio" name="q8" value="O1"> Partially set up</label>
+          <label class="opt"><input type="radio" name="q8" value="O0"> Fully integrated flows</label>
+          <label class="opt"><input type="radio" name="q8" value="O1"> Manual processes</label>
+        </div>
+      </div>
+      <div class="q" data-phase="Optimization">
+        <h3>9) SEO & analytics:</h3>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="q9" value="O2"> Not set</label>
+          <label class="opt"><input type="radio" name="q9" value="O1"> Basic tracking</label>
+          <label class="opt"><input type="radio" name="q9" value="O0"> Robust + reviewed</label>
+          <label class="opt"><input type="radio" name="q9" value="O1"> Installed, not used</label>
+        </div>
+      </div>
+
+      <!-- Navigation -->
+      <div class="q" data-phase="Navigation">
+        <h3>10) Paid media & retargeting:</h3>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="q10" value="N2"> Not running</label>
+          <label class="opt"><input type="radio" name="q10" value="N1"> Occasional tests</label>
+          <label class="opt"><input type="radio" name="q10" value="N0"> Always-on + optimized</label>
+          <label class="opt"><input type="radio" name="q10" value="N1"> Running, not optimized</label>
+        </div>
+      </div>
+      <div class="q" data-phase="Navigation">
+        <h3>11) Experimentation & A/B testing cadence:</h3>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="q11" value="N2"> Rarely/never</label>
+          <label class="opt"><input type="radio" name="q11" value="N1"> Ad hoc only</label>
+          <label class="opt"><input type="radio" name="q11" value="N0"> Structured monthly program</label>
+          <label class="opt"><input type="radio" name="q11" value="N1"> Inconsistent</label>
+        </div>
+      </div>
+      <div class="q" data-phase="Navigation">
+        <h3>12) Revenue predictability (pipeline & CAC/LTV):</h3>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="q12" value="N2"> Unclear</label>
+          <label class="opt"><input type="radio" name="q12" value="N1"> Partially tracked</label>
+          <label class="opt"><input type="radio" name="q12" value="N0"> Clear dashboards & targets</label>
+          <label class="opt"><input type="radio" name="q12" value="N1"> Numbers exist, not used</label>
+        </div>
+      </div>
+
+      <div class="footer">
+        <div class="note">Answer all questions to unlock your result.</div>
+        <div>
+          <button type="button" class="btn btn-ghost" id="backBtn">Back</button>
+          <button type="button" class="btn btn-primary" id="nextBtn">Next</button>
+          <button type="submit" class="btn btn-primary hidden" id="seeResult">See my plan</button>
+        </div>
+      </div>
+    </form>
+
+    <!-- Result -->
+    <div class="card hidden" id="result" style="margin-top:16px">
+      <div class="result grid2">
+        <div>
+          <h2>Your best next move: <span class="tier" id="tierLabel">—</span></h2>
+          <div class="rec" id="rec"></div>
+          <div class="kpis" id="kpis"></div>
+          <div class="cta" style="margin-top:10px">
+            <a class="btn btn-primary" href="/contact" id="ctaPrimary">Book a discovery call</a>
+            <a class="btn btn-ghost" href="/capabilities">View capabilities</a>
+          </div>
+        </div>
+        <div class="panel">
+          <strong>Investment & Timeline</strong>
+          <div id="pricing" style="margin-top:8px"></div>
+          <hr style="border:none;border-top:1px solid #eee;margin:14px 0">
+          <strong>Email my results</strong>
+          <form name="icon-quiz-results" method="POST" data-netlify="true">
+            <input type="hidden" name="form-name" value="icon-quiz-results">
+            <input type="hidden" id="payload" name="payload">
+            <div style="display:grid;grid-template-columns:1fr;gap:8px;margin-top:8px">
+              <input name="name" placeholder="Name*" required style="padding:10px;border:1px solid #e8e8e8;border-radius:8px">
+              <input name="email" type="email" placeholder="Email*" required style="padding:10px;border:1px solid #e8e8e8;border-radius:8px">
+              <label style="font-size:12px;color:#555"><input type="checkbox" required> I agree to be contacted with my quiz results.</label>
+              <button class="btn btn-primary" type="submit">Send results</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <p class="note" style="margin:12px 8px">
+      Modeled after the modern “quick brand assessment” pattern (2-minute completion) used by leading agencies, adapted to Abstract Creative’s ICON Method & tiers.
+    </p>
+  </div>
+
+  <script>
+    // Quiz pagination + scoring
+    const form = document.getElementById('quiz');
+    const questions = [...form.querySelectorAll('.q')];
+    let idx = 0;
+    const nextBtn = document.getElementById('nextBtn');
+    const backBtn = document.getElementById('backBtn');
+    const seeBtn = document.getElementById('seeResult');
+    const bar = document.getElementById('bar');
+    const result = document.getElementById('result');
+
+    // init
+    questions.forEach((q,i)=>{ if(i!==0) q.classList.add('hidden'); });
+    backBtn.disabled = true;
+
+    function updateProgress(){
+      const answered = questions.slice(0, idx).length;
+      const total = questions.length;
+      bar.style.width = Math.round((idx/total)*100)+'%';
+      backBtn.disabled = idx===0;
+      nextBtn.classList.toggle('hidden', idx===total-1);
+      seeBtn.classList.toggle('hidden', idx!==total-1);
+    }
+    updateProgress();
+
+    function currentAnswered(){
+      return [...questions[idx].querySelectorAll('input[type=radio]')].some(i=>i.checked);
+    }
+
+    nextBtn.addEventListener('click', ()=>{
+      if(!currentAnswered()){ questions[idx].scrollIntoView({behavior:'smooth',block:'center'}); return; }
+      questions[idx].classList.add('hidden'); idx++; questions[idx].classList.remove('hidden'); updateProgress();
+      questions[idx].scrollIntoView({behavior:'smooth',block:'start'});
+    });
+    backBtn.addEventListener('click', ()=>{
+      if(idx===0) return;
+      questions[idx].classList.add('hidden'); idx--; questions[idx].classList.remove('hidden'); updateProgress();
+      questions[idx].scrollIntoView({behavior:'smooth',block:'start'});
+    });
+
+    form.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      // Require all
+      const allAnswered = questions.every(q=>[...q.querySelectorAll('input')].some(i=>i.checked));
+      if(!allAnswered){ alert('Please answer all questions.'); return; }
+
+      // Score by phase: lower is better (0 = mature, 2 = needs work)
+      const vals = [...form.querySelectorAll('input[type=radio]:checked')].map(i=>i.value);
+      const score = {I:0,C:0,O:0,N:0};
+      vals.forEach(v=>{
+        const phase = v[0], pts = parseInt(v[1],10);
+        score[phase]+=isNaN(pts)?1:pts;
+      });
+
+      // Determine recommendation
+      // Heuristic: highest need area determines entry tier
+      const entries = Object.entries(score).sort((a,b)=>b[1]-a[1]); // highest need first
+      const top = entries[0][0]; // 'I','C','O','N'
+      let tier, copy, pricing;
+      if(top==='I'){ 
+        tier='Foundation';
+        copy="You’ll get brand clarity fast: positioning, personas, tone, and a cohesive visual identity. This sets the stage for efficient marketing and sales.";
+        pricing=`<div class="kpi"><strong>Starting:</strong> $6,500</div><div class="kpi"><strong>Timeline:</strong> 4–6 weeks</div>`;
+      } else if(top==='C' || top==='O'){ 
+        tier='Pro Growth';
+        copy="Turn strategy into scalable systems: messaging playbook, conversion-ready website, funnels, CRM/email automation, and SEO foundations.";
+        pricing=`<div class="kpi"><strong>Starting:</strong> $12,000</div><div class="kpi"><strong>Timeline:</strong> 6–10 weeks</div>`;
+      } else { 
+        tier='Market Authority';
+        copy="Drive predictable growth: paid media, retargeting, experimentation, and performance dashboards to scale with confidence.";
+        pricing=`<div class="kpi"><strong>From:</strong> $4,000/month</div><div class="kpi"><strong>Engagement:</strong> 3–6 months (ongoing)</div>`;
+      }
+
+      document.getElementById('tierLabel').textContent = tier;
+      document.getElementById('rec').textContent = copy;
+      document.getElementById('pricing').innerHTML = pricing;
+
+      // Surface key KPIs to address
+      const kpis = [];
+      if(score.I>=3) kpis.push('Brand positioning & identity system');
+      if(score.C>=3) kpis.push('Messaging playbook & conversion copy');
+      if(score.O>=3) kpis.push('Website UX, SEO, CRM & automation');
+      if(score.N>=3) kpis.push('Paid media, retargeting, testing cadence');
+      document.getElementById('kpis').innerHTML = kpis.map(k=>`<span class="kpi">${k}</span>`).join('') || `<span class="kpi">You’re in great shape—let’s optimize for scale.</span>`;
+
+      // Payload for email
+      const payload = {
+        scores:score, recommendation:tier, kpis, ts:new Date().toISOString()
+      };
+      document.getElementById('payload').value = JSON.stringify(payload);
+
+      // Show result
+      form.classList.add('hidden');
+      result.classList.remove('hidden');
+      window.scrollTo({top:0,behavior:'smooth'});
+      bar.style.width='100%';
+    });
+  </script>
+</body>
+</html>
