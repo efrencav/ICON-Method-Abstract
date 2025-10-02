@@ -9216,6 +9216,7 @@ img {
 
 .footer__main-wrp {
   position: relative;
+  margin-top: -10px;
 }
 
 .footer__wrp,
