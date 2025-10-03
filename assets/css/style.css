@@ -3535,7 +3535,7 @@ img {
   overflow: hidden;
   position: relative;
   z-index: 1;
-  padding-top: 210px;
+  padding-top: 180px;
   padding-bottom: 120px;
   background-color: #32373E;
 }
@@ -3569,8 +3569,8 @@ img {
 
 .banner__hero-info {
   position: absolute;
-  right: 0;
-  bottom: 10%;
+  right: -10%;
+  bottom: 15%;
   z-index: -1;
 }
 
@@ -12687,6 +12687,27 @@ ul.simple-list.long-list p { margin-bottom: 8px; }
   font-size: 16px;
 }
 
+.simple-list-two {
+  list-style: none;
+  padding-left: 25px; /* space for icon */
+  color: #6c757d;
+}
+.simple-list-two .list-item-two {
+  position: relative;
+  /* margin-bottom: 10px; */
+}
+
+.simple-list-two .list-item-two:before {
+  content: '\f058'; /* FontAwesome check-circle */
+  font-family: 'FontAwesome';
+  position: absolute;
+  left: -25px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #00b5b0;
+  font-size: 16px;
+}
+
 .simple-list .list-label {
   font-weight: bold;
   color: #1B4D3E; /* Darker green tone */
@@ -12778,4 +12799,8 @@ a.tra-link { font-size: 1rem; line-height: 1; font-weight: 600; }
 .lead {
     font-size: 1.25rem;
     font-weight: 400 !important;
+}
+
+.banner-content-foundation {
+  color: #00b5b0 !important;
 }
