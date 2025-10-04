@@ -5665,7 +5665,7 @@ img {
 }
 
 .process-area {
-  overflow: hidden;
+  overflow: auto;
 }
 
 .process__wrp {
@@ -12804,3 +12804,64 @@ a.tra-link { font-size: 1rem; line-height: 1; font-weight: 600; }
 .banner-content-foundation {
   color: #00b5b0 !important;
 }
+
+
+/* === ICON Method mid-screen optimization (14" MacBook Pro view) === */
+@media (max-width: 1500px) and (min-width: 1200px) {
+  #icon-method {
+    font-size: 0.82rem; /* reduce overall font size slightly */
+    line-height: 1.45;
+  }
+
+  #icon-method h3 {
+    font-size: 1.2rem;
+  }
+
+  #icon-method h5 {
+    font-size: .92rem;
+  }
+
+  #icon-method p,
+  #icon-method li {
+    font-size: 0.95rem;
+  }
+
+  #icon-method .rstabsec h5.text-white {
+    font-size: .74rem;
+    line-height: 1;
+  }
+
+.rstabsec h5 {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+    margin-bottom: 15px;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+    line-height: 28px;
+    font-size: 16px;
+}
+
+  #icon-method .rstabsec ul li {
+    margin-bottom: 6px;
+  }
+
+  #icon-method .rstabsec .btn-one {
+    margin-top: 20px; /* tighten spacing above button */
+  }
+
+  .contenttab ul li, .tabinsecright ul li, .rstabsec ul li, .item-contents1 ul li, .tabContentBox ul li {
+    font-family: "Public Sans", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    padding-left: 35px;
+    margin-top: 2px;
+    position: relative;
+}
+}
+
+

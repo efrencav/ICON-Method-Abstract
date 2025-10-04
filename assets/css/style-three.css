@@ -12582,3 +12582,86 @@ section[id] {
     color: #ffffff; /* white */
     font-size: 14px;
 }
+
+
+/* === ICON Method mid-screen optimization (14" MacBook Pro view) === */
+@media (min-width: 1200px) and (max-width: 1800px) {
+#icon-method {
+    font-size: 0.92rem; /* reduce overall font size slightly */
+    line-height: 1.45;
+  }
+
+ h3 {
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+h5 {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  #icon-method p,
+  #icon-method li {
+    font-size: 15px;
+  }
+
+.rstabsec h5 {
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 22px;
+    margin-bottom: 10px;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+    line-height: 28px;
+    font-size: 16px;
+}
+
+  #icon-method .rstabsec ul li {
+    margin-bottom: 6px;
+  }
+
+  #icon-method .rstabsec .btn-one {
+    margin-top: 20px; /* tighten spacing above button */
+  }
+
+  .contenttab ul li, .tabinsecright ul li, .rstabsec ul li, .item-contents1 ul li, .tabContentBox ul li {
+    font-family: "Public Sans", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    padding-left: 35px;
+    margin-top: 5px;
+    position: relative;
+}
+/* #icon-method .rstabsec h5.text-white {
+    font-size: 1rem;
+    line-height: 1.4;
+  } */
+
+
+  #icon-method .rstabsec .btn-one {
+    margin-top: 20px; /* tighten spacing above button */
+  }
+
+  .tabinsec1 {
+    display: flex;
+    margin-top: 10px;
+}
+
+.contenttab p {
+    font-family: "Public Sans", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 20px;
+}
+
+.contenttab h5 {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+}
+}
