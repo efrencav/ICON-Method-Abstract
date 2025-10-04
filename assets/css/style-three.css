@@ -12587,7 +12587,7 @@ section[id] {
 /* === ICON Method mid-screen optimization (14" MacBook Pro view) === */
 @media (min-width: 1200px) and (max-width: 1800px) {
 #icon-method {
-    font-size: 0.92rem; /* reduce overall font size slightly */
+    font-size: 1rem; /* reduce overall font size slightly */
     line-height: 1.45;
   }
 
@@ -12597,18 +12597,18 @@ section[id] {
   }
 
 h5 {
-    font-size: 18px;
+    font-size: 20px;
     line-height: 28px;
   }
 
   #icon-method p,
   #icon-method li {
-    font-size: 15px;
+    font-size: 16px;
   }
 
 .rstabsec h5 {
     font-weight: 400;
-    font-size: 17px;
+    font-size: 19px;
     line-height: 22px;
     margin-bottom: 10px;
 }
@@ -12637,11 +12637,10 @@ p {
     margin-top: 5px;
     position: relative;
 }
-/* #icon-method .rstabsec h5.text-white {
-    font-size: 1rem;
-    line-height: 1.4;
-  } */
-
+h2 {
+    font-size: 60px;
+    line-height: 64px;
+}
 
   #icon-method .rstabsec .btn-one {
     margin-top: 20px; /* tighten spacing above button */
