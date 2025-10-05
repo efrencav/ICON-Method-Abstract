@@ -4118,7 +4118,7 @@ img {
 }
 
 .banner-four__slider-area {
-  background-color: var(--main);
+  background-color: var(--black);
   margin-top: -130px;
   position: relative;
 }
