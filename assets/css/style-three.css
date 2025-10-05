@@ -3537,7 +3537,7 @@ img {
   z-index: 1;
   padding-top: 210px;
   padding-bottom: 120px;
-  background-color: #32373E;
+  background-color: #eceae6;
 }
 
 @media (max-width: 767px) {
@@ -3551,7 +3551,7 @@ img {
   z-index: 1;
   padding-top: 210px;
   padding-bottom: 120px;
-  background-color: #e5d9cf;
+  /* background-color: #e5d9cf; */
 }
 
 @media (max-width: 767px) {
@@ -10667,6 +10667,11 @@ h1 {
 
 .threep {
   position: relative;
+  text-align: center;
+}
+.threep p {
+  position: relative;
+  text-align: center;
 }
 
 

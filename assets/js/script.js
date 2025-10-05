@@ -861,3 +861,12 @@ CSS TABLE OF CONTENTS
   new WOW().init();
   // WOW Animatin area start here ***
 })(jQuery);
+
+
+// data-background → background-image
+jQuery(function ($) {
+  $('[data-background]').each(function () {
+    var bg = $(this).attr('data-background');
+    if (bg) $(this).css('background-image', "url('" + bg + "')");
+  });
+});
