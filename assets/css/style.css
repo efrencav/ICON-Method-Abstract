@@ -12864,4 +12864,16 @@ p {
 }
 }
 
-
+.timeline-badge {
+  display: inline-block;
+  background-color: #00817f; /* teal tone */
+  color: #ffffff;
+  font-family: 'Public Sans', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  padding: 16px 48px;
+  border-radius: 12px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  line-height: 1.4;
+}
