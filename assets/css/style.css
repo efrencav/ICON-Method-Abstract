@@ -7854,6 +7854,13 @@ img {
   border: var(--border-1px);
   border-radius: 28px;
 }
+.contact__item-two {
+  /* height: 100%; */
+  padding: 30px;
+  background-color: var(--sub-bg);
+  border: var(--border-1px);
+  border-radius: 28px;
+}
 
 .contact__item .icon {
   width: 52px;
