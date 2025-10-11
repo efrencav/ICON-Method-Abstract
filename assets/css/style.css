@@ -13160,3 +13160,24 @@ p {
   .services-page .ap-grid-3 { grid-template-columns: repeat(3, 1fr); }
   .services-page .ap-grid-4 { grid-template-columns: repeat(4, 1fr); }
 }
+
+/* Section divider (works with or without .services-page wrapper) */
+.services-page .section-divider,
+.about-page .section-divider,
+.section-divider {
+  width: 100%;
+  height: 2px;                /* a touch thicker so it's visible */
+  display: block;
+  background: linear-gradient(90deg, transparent, var(--brand-light, #00B5B0), transparent);
+  border: 0;
+  opacity: .6;
+  margin: 48px 0;
+}
+
+/* Hard fallback if gradients are overridden */
+.services-page .section-divider.fallback,
+.about-page .section-divider.fallback,
+.section-divider.fallback {
+  background: none;
+  border-top: 1px solid rgba(0,181,176,.6);
+}
