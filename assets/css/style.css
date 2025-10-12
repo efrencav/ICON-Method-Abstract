@@ -2123,6 +2123,30 @@ img {
   color: #ffffff;
 }
 
+.button-none {
+  padding: 10px 30px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #010101 !important; /* black text */
+  background-color: transparent !important;
+  border: 1pt solid #010101 !important; /* black outline */
+  display: inline-block;
+  position: relative;
+  letter-spacing: 0.5px;
+  z-index: 3;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button-none:hover {
+  background-color: #010101 !important;
+  color: #ffffff !important;
+  border-color: #010101 !important;
+}
+
 @media (max-width: 450px) {
 
   .btn-one,
@@ -13181,3 +13205,93 @@ p {
   background: none;
   border-top: 1px solid rgba(0,181,176,.6);
 }
+
+/* ===== Refined What We Stand For styling ===== */
+/* ========= Values cards (cleaned) ========= */
+:root {
+  --badge-size: 96px;
+  --badge-icon-size: 44px;
+  --card-radius: 14px;
+  --grad-start: #f0ad1e;
+  --grad-mid:   #ef4237;
+  --grad-end:   #d13833;
+}
+
+/* Base card: white, no border, soft shadow */
+.ap-values .ap-card {
+  position: relative;
+  overflow: visible;
+  background: #fff;
+  border-radius: var(--card-radius);
+  border: 0 !important;                  /* kill theme borders */
+  outline: 0 !important;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+  background-clip: padding-box;
+  padding: 28px 22px 24px;
+  padding-top: calc(var(--badge-size) / 2 + 20px); /* clear the badge */
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+/* Top gradient bar */
+.ap-values .ap-card::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, var(--grad-start), var(--grad-mid) 50%, var(--grad-end));
+  border-top-left-radius: var(--card-radius);
+  border-top-right-radius: var(--card-radius);
+  z-index: 1;
+}
+
+/* Remove any legacy pseudo-decorations */
+.ap-values .ap-card::before { content: none !important; }
+
+/* Hover */
+.ap-values .ap-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+}
+
+/* Badge: solid circle, white icon, half outside */
+.ap-values .icon-badge {
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translate(-50%, -50%);
+  width: var(--badge-size);
+  height: var(--badge-size);
+  border-radius: 50%;
+  background: var(--main);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  pointer-events: none; /* avoid blocking clicks */
+}
+.ap-values .icon-badge i {
+  color: #fff;
+  font-size: var(--badge-icon-size);
+  line-height: 1;
+}
+
+/* Title spacing */
+.ap-values .ap-card h4 {
+  margin: 12px 0 10px;
+}
+
+/* Space under section title so badges don’t collide */
+.ap-values .section-header {
+  margin-bottom: calc(var(--badge-size) + 16px);
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+  :root {
+    --badge-size: 72px;
+    --badge-icon-size: 34px;
+  }
+  .ap-values .ap-card {
+    padding-top: calc(var(--badge-size) / 2 + 34px);
+  }
+}
+

@@ -11092,6 +11092,94 @@ h1 {
   margin-left: auto;
   margin-right: auto;
 }
+/* Tokens (reuse your existing values if already defined) */
+:root{
+  --badge-size: 96px;
+  --badge-icon-size: 44px;
+  --card-radius: 14px;
+  --grad-start: #f0ad1e;
+  --grad-mid:   #ef4237;
+  --grad-end:   #d13833;
+}
+
+/* Painpoints cards: base */
+.painpoints-area .pp-card{
+  position: relative;
+  overflow: visible;
+  background: #fff;
+  border: 0 !important;
+  outline: 0 !important;
+  border-radius: var(--card-radius);
+  background-clip: padding-box;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+  padding: 28px 22px 24px;
+  padding-top: calc(var(--badge-size) / 2 + 10px); /* clear the badge */
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+/* Use your existing .pp-accent as a thin gradient top bar */
+.painpoints-area .pp-card .pp-accent{
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 6px;                 /* thin bar */
+  border-top-left-radius: var(--card-radius);
+  border-top-right-radius: var(--card-radius);
+  background: linear-gradient(90deg, var(--grad-start), var(--grad-mid) 50%, var(--grad-end)) !important;
+  z-index: 1;
+}
+
+/* Circle badge (half outside top) */
+.painpoints-area .pp-card .icon-badge{
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translate(-50%, -50%);
+  width: var(--badge-size);
+  height: var(--badge-size);
+  border-radius: 50%;
+  background: var(--main);
+  display: inline-flex; align-items: center; justify-content: center;
+  z-index: 2;
+  pointer-events: none; /* don’t block clicks */
+}
+.painpoints-area .pp-card .icon-badge i{
+  color: #fff;
+  font-size: var(--badge-icon-size);
+  line-height: 1;
+}
+
+/* Title spacing and size (you already upscaled h3 here) */
+.painpoints-area .pp-card .pp-head h3{
+  margin: 12px 0 0px;
+  text-align: center !important;
+}
+
+/* Hover lift */
+.painpoints-area .pp-card:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+}
+
+/* Ensure section header clears badges */
+.pain-stuck-3up .section-header-two{ 
+  text-align: center !important; 
+  margin-left:auto; margin-right:auto; 
+  margin-bottom: calc(var(--badge-size) + -10px);
+}
+
+/* Equal height (your file already flexes the row; keeping it) */
+.painpoints-area .row.g-4{ display:flex; flex-wrap:wrap; }
+.painpoints-area .row.g-4 > [class*="col-"]{ display:flex; }
+
+/* Responsive */
+@media (max-width: 767px){
+  :root{
+    --badge-size: 72px;
+    --badge-icon-size: 34px;
+  }
+  .painpoints-area .pp-card{
+    padding-top: calc(var(--badge-size) / 2 + 34px);
+  }
+}
 
 
 .d-flex568 .alink {
@@ -12669,3 +12757,50 @@ h2 {
     line-height: 28px;
 }
 }
+
+.button-none {
+  padding: 10px 30px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #010101 !important; /* black text */
+  background-color: transparent !important;
+  border: 1pt solid #010101 !important; /* black outline */
+  display: inline-block;
+  position: relative;
+  letter-spacing: 0.5px;
+  z-index: 3;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button-none:hover {
+  background-color: #010101 !important;
+  color: #ffffff !important;
+  border-color: #010101 !important;
+}
+
+.disclaimer-text {
+  font-size: 13px;
+  color: rgba(1, 1, 1, 0.4);
+  margin-top: 15px;
+  line-height: 1.2;
+  width: 500px;
+  /* letter-spacing: 0.3px; */
+}
+
+.banner-area .disclaimer-text {
+  font-family: 'Public Sans', sans-serif;
+  font-weight: 200;
+}
+
+@media (max-width: 767px) {
+  .disclaimer-text {
+    font-size: 12px;
+    text-align: center;
+  }
+}
+
+
