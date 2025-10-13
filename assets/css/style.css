@@ -1720,6 +1720,10 @@ img {
   background-color: #32373E !important;
   color: #ffffff;
 }
+.black-bg {
+  background-color: #000000 !important;
+  color: #ffffff;
+}
 
 .footer-bg {
   background-color: #1b2523 !important;
@@ -13293,5 +13297,167 @@ p {
   .ap-values .ap-card {
     padding-top: calc(var(--badge-size) / 2 + 34px);
   }
+}
+
+/* === ABSTRACT CREATIVE | FEATURES-2 COLOR OVERRIDE === */
+
+/* Use Abstract's main color variable */
+:root {
+  --theme-color: var(--main);  /* ensures consistency with your core palette */
+}
+
+/* Icon foreground (the Flaticon glyphs inside .fbox-ico) */
+#features-2 .fbox-ico.color--theme [class*="flaticon-"]:before,
+#features-2 .fbox-ico.color--theme [class*="flaticon-"]:after {
+  color: var(--main) !important;
+}
+
+/* Blob shape color (the inline SVG shape behind icon) */
+#features-2 .shape-ico.color--theme path {
+  fill: color-mix(in srgb, var(--main) 30%, #f0ad1e 15%) !important;
+  opacity: 0.25;
+}
+
+/* Title + text tone (clean, consistent contrast) */
+#features-2 .section-title h2 {
+  color: #112B32;
+  font-weight: 700;
+}
+#features-2 .section-title p {
+  color: #454445;
+  opacity: 0.9;
+}
+#features-2 .fbox-txt h5 {
+  color: #112B32;
+  font-weight: 600;
+}
+#features-2 .fbox-txt p {
+  color: #454445;
+  line-height: 1.6;
+}
+
+/* Adjust layout + shadow subtly */
+#features-2 .fbox-ico-wrap {
+  margin-right: 28px;
+}
+#features-2 .shape-ico svg {
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.08));
+}
+
+@font-face{
+  font-family:"flaticon";
+  src:url("flaticon.woff2") format("woff2"),
+      url("flaticon.woff") format("woff");
+  font-weight:normal;font-style:normal;font-display:swap;
+}
+[class^="flaticon-"],[class*=" flaticon-"]{font-family:"flaticon";speak:none;font-style:normal;font-weight:normal;line-height:1;display:inline-block}
+.flaticon-innovation:before{content:"\f101"}
+.flaticon-pie-chart-1:before{content:"\f102"}
+.flaticon-interface:before{content:"\f103"}
+.flaticon-shopping-cart:before{content:"\f104"}
+.flaticon-podium:before{content:"\f105"}
+.flaticon-search:before{content:"\f106"}
+
+/* ===== ABSTRACT | FEATURES-2 FIX ===== */
+
+/* Layout + alignment */
+#features-2 .fbox-2{
+  display:flex; align-items:flex-start;
+}
+#features-2 .fbox-ico-wrap{ 
+  flex:0 0 auto; margin-right:24px;
+}
+#features-2 .fbox-txt h5{ 
+  margin:0 0 6px; font-weight:700; color:#112B32;
+}
+#features-2 .fbox-txt p{ 
+  margin:0; color:#454445; line-height:1.6;
+}
+
+/* Icon container (round badge with blob) */
+#features-2 .fbox-ico.ico-55{ 
+  width:90px; height:90px; display:flex; align-items:center; justify-content:center;
+}
+#features-2 .shape-ico{
+  position:relative; width:90px; height:90px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+}
+/* Make the background blob visible and brand-tinted */
+#features-2 .shape-ico svg{
+  position:absolute; inset:0; width:100%; height:100%;
+  opacity:.25; filter: drop-shadow(0 8px 16px rgba(0,0,0,.06));
+}
+#features-2 .shape-ico svg path{
+  /* blob color = var(--main) mixed with a warm accent for depth */
+  fill: color-mix(in srgb, var(--main) 75%, #f0ad1e 25%);
+}
+
+/* Glyph (the actual icon) */
+#features-2 .fbox-ico [class*="flaticon-"]{
+  position:relative; z-index:1;
+  font-size:38px; line-height:1; color:var(--main);
+}
+
+/* Section title tone */
+#features-2 .section-title h2{ color:#ffffff; }
+#features-2 .section-title p{ color:#f6ead9; }
+
+/* Vertical rhythm between cards */
+#features-2 .rows-3 .col{ margin-bottom:28px; }
+
+/* If your theme forced a gray icon color, override it here */
+#features-2 .fbox-ico.color--theme [class*="flaticon-"]:before,
+#features-2 .fbox-ico.color--theme [class*="flaticon-"]:after{
+  color:var(--main) !important;
+}
+#features-2 .shape-ico.color--theme path{ fill: color-mix(in srgb, var(--main) 75%, #f0ad1e 25%) !important; }
+
+/* === ABSTRACT | FEATURES-2 ICON SIZE + ALIGN === */
+
+/* Layout */
+#features-2 .fbox-2{ display:flex; align-items:flex-start; }
+#features-2 .fbox-ico-wrap{ flex:0 0 108px; margin-right:28px; } /* fixed rail so text lines up */
+#features-2 .rows-3 .col{ margin-bottom:30px; }
+
+/* Icon badge */
+#features-2 .fbox-ico.ico-55,
+#features-2 .shape-ico{
+  width:96px; height:96px;
+  display:flex; align-items:center; justify-content:center;
+  position:relative; border-radius:50%;
+}
+
+/* Make the blob visible + behind the glyph */
+#features-2 .shape-ico svg{
+  position:absolute; inset:0; width:100%; height:100%;
+  opacity:.25; z-index:0; filter:drop-shadow(0 8px 16px rgba(0,0,0,.07));
+}
+#features-2 .shape-ico svg path{
+  fill: color-mix(in srgb, var(--main) 78%, #f0ad1e 22%);
+}
+
+/* CRITICAL: size the Flaticon pseudo-element (this is the actual glyph) */
+#features-2 .fbox-ico [class*="flaticon-"]::before{
+  font-size:46px;            /* increase icon size */
+  line-height:1;
+  color:var(--main);
+  display:inline-block;
+  transform: translateZ(0);  /* avoids blur on some browsers */
+  z-index:1; position:relative;
+}
+
+/* Force any theme overrides to respect brand color */
+#features-2 .fbox-ico.color--theme [class*="flaticon-"]::before{ color:var(--main) !important; }
+#features-2 .shape-ico.color--theme path{ fill: color-mix(in srgb, var(--main) 78%, #f0ad1e 22%) !important; }
+
+/* Typography (unchanged, just tidy) */
+#features-2 .fbox-txt h5{ margin:0 0 6px; font-weight:700; color:#ffffff; }
+#features-2 .fbox-txt p{ margin:0; color:#f6ead9; line-height:1.6; }
+
+/* Responsive: keep icons strong on md screens */
+@media (max-width: 991.98px){
+  #features-2 .fbox-ico-wrap{ flex-basis:92px; margin-right:18px; }
+  #features-2 .fbox-ico.ico-55, #features-2 .shape-ico{ width:88px; height:88px; }
+  #features-2 .fbox-ico [class*="flaticon-"]::before{ font-size:42px; }
 }
 
