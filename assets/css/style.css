@@ -11036,7 +11036,7 @@ h1 {
 /* Match large text sizing from 23 */
 .about__counter24 .coun-item h3 {
   color: var(--main);       /* your theme var; swap if needed */
-  max-width: 192px;
+  /* max-width: 192px; */
   width: 100%;
   font-weight: 700;
   font-size: 67px;          /* large number */
