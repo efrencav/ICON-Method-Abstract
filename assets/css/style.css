@@ -5032,7 +5032,7 @@ img {
 
 .about-four__content.v1 .content-info-list .info-item .head {
   display: flex;
-  align-items: baseline;
+  /* align-items: baseline; */
   gap: 12px;
 }
 
@@ -12768,6 +12768,28 @@ ul.simple-list.long-list p { margin-bottom: 8px; }
   color: #1B4D3E; /* Darker green tone */
 }
 
+/* Simple list bullets (global) */
+.simple-list { margin: 0; padding: 0; list-style: none; }
+.simple-list .list-item {
+  position: relative;
+  padding-left: 28px;
+  margin: 0 0 10px 0;
+}
+.simple-list .list-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.65em;               /* vertical alignment of the dot */
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--main, #ef4237);  /* Abstract orange */
+}
+
+/* White bullets variant for dark sections (if you need it elsewhere) */
+.white-bullets .list-item::before { background: #fff; }
+.white-bullets .list-item { color: #fff; }
+
 /* themed color helper */
 .color--theme,
 .color--theme h1,
@@ -13461,3 +13483,69 @@ p {
   #features-2 .fbox-ico [class*="flaticon-"]::before{ font-size:42px; }
 }
 
+/* Founder & CEO — Larger icons, slightly lowered for better alignment */
+.about-four-area .info-item .head i {
+  width: 64px;
+  height: 64px;
+  display: inline-flex;
+  align-items: flex-end; /* pushes the icon glyph lower */
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--grad-mid, #ef4237); /* brand accent */
+  margin-right: 14px;
+  padding-bottom: 4px; /* fine-tune vertical position */
+}
+
+/* Icon glyph inside circle */
+.about-four-area .info-item .head i::before {
+  font-size: 28px;
+  line-height: 1;
+  color: #fff;
+  transform: translateY(2px); /* subtle visual nudge downward */
+}
+
+
+/* Founder & CEO Section Icon Size Adjustment */
+.founder-section .icon-badge i {
+  font-size: 44px !important;  /* Matches other major icon sizes */
+  line-height: 1.4;
+}
+
+.founder-section .icon-badge {
+  width: 96px;
+  height: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+/* Founder & CEO — ensure Font Awesome glyph shows inside the circle */
+.about-four-area .info-item .head i {
+  width: 64px;
+  height: 64px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--grad-mid, #ef4237); /* your brand accent */
+  margin-right: 14px;
+}
+
+/* Font Awesome uses ::before for the actual glyph — size & color it explicitly */
+.about-four-area .info-item .head i::before {
+  font-size: 28px;     /* adjusts the glyph itself */
+  line-height: 1;
+  color: #fff;
+}
+
+/* Safety: undo any resets that might hide the glyph */
+.about-four-area .info-item .head i,
+.about-four-area .info-item .head i::before {
+  text-indent: 0;
+  overflow: visible;
+  opacity: 1;
+}
+
+/* If your project loads mostly 'solid' style, this helps ensure correct weight */
+.about-four-area .info-item .head i.fa-solid::before { font-weight: 900; }
+.about-four-area .info-item .head i.fa-regular::before { font-weight: 400; }

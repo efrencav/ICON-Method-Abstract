@@ -12804,3 +12804,39 @@ h2 {
 }
 
 
+/* Founder & CEO Section Icon Size Adjustment */
+.founder-section .icon-badge i {
+  font-size: 44px !important;  /* Matches other major icon sizes */
+  line-height: 1.4;
+}
+
+.founder-section .icon-badge {
+  width: 96px;
+  height: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+/* Founder & CEO Section Icon Resize */
+.about-four-area .info-item .head i {
+  font-size: 42px !important;   /* Increase icon size */
+  width: 60px;
+  height: 60px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--primary, #ef4237); /* or use your brand accent */
+  color: #fff;
+  margin-right: 14px;
+  transition: all 0.3s ease;
+}
+
+/* Optional: Add hover animation for polish */
+.about-four-area .info-item .head i:hover {
+  transform: scale(1.1);
+  background: var(--grad-mid, #ed7b39);
+}
+
