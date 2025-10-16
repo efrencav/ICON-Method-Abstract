@@ -12840,3 +12840,37 @@ h2 {
   background: var(--grad-mid, #ed7b39);
 }
 
+ .how-it-works-row {
+    position: relative;
+  }
+
+  .divider-line {
+    width: 1px;
+    height: 120px;
+    background-color: rgba(255, 255, 255, 0.15);
+  }
+
+  @media (max-width: 768px) {
+    .divider-line {
+      display: none;
+    }
+  }
+
+  .process-step p {
+    /* color: rgba(255, 255, 255, 0.85); */
+    margin: 0;
+    color: #f6ead9;
+    line-height: 1.6;
+  }
+
+  .process-step .process-metric {
+    color: #f0ad1e;
+    font-weight: 500;
+    font-size: 0.95rem;
+  }
+
+  .process-step h5 {
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: ffffff;
+  }
