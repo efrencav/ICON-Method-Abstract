@@ -10687,7 +10687,7 @@ h1 {
   text-align: left;
   max-width: 1000px;
   width: 100%;
-  margin-left: 20%;
+  margin-left: 6%;
 }
 
 .contact__form form button {
@@ -13288,7 +13288,7 @@ p {
 
 /* Space under section title so badges don’t collide */
 .ap-values .section-header {
-  margin-bottom: calc(var(--badge-size) + 16px);
+  margin-bottom: calc(var(--badge-size));
 }
 
 /* Responsive */
@@ -13532,3 +13532,94 @@ p {
 .about-four-area .info-item .head i.fa-regular::before { font-weight: 400; }
 
 
+.ap-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.ap-card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  padding: 60px 30px 40px;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  border-top: 6px solid transparent;
+  background-clip: padding-box;
+}
+
+.ap-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  border-radius: 16px 16px 0 0;
+  background: linear-gradient(90deg, #f0ad1e, #ef4237);
+}
+
+.ap-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.ap-icon {
+  background: #ef4237;
+  color: #fff;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: -110px auto 20px;
+  font-size: 36px;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.ap-icon i {
+  line-height: 1;
+  font-size: 36px;
+  color: #fff;
+}
+
+.ap-card h4 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+  color: #010101;
+}
+
+.ap-card p {
+  font-family: 'Public Sans', sans-serif;
+  color: #454445;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.text-orange {
+  color: #ef4237;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.ap-icon i { line-height:1 } /* keep icons centered */
+
+i[class^="flaticon-"]:before,
+i[class*=" flaticon-"]:before {
+  font-family: flaticon!important;
+  font-style: normal;
+  font-weight: normal!important;
+  font-variant: normal;
+  text-transform: none;
+  font-size: 20px;
+  line-height: 1!important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

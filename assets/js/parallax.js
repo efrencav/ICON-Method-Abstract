@@ -314,7 +314,7 @@
         var winScrollTop  = $win.scrollTop();
         var scrollTopMax  = Parallax.docHeight - Parallax.winHeight;
         var scrollLeftMax = Parallax.docWidth  - Parallax.winWidth;
-        Parallax.scrollTop  = Math.max(0, Math.min(scrollTopMax,  winScrollTop));
+        Parallax.scrollTop  = Math.max(0, Math.min(scrollTopMax, winScrollTop));
         Parallax.scrollLeft = Math.max(0, Math.min(scrollLeftMax, $win.scrollLeft()));
         Parallax.overScroll = Math.max(winScrollTop - scrollTopMax, Math.min(winScrollTop, 0));
       };
