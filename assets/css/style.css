@@ -10774,7 +10774,7 @@ h1 {
   background: -moz-linear-gradient(180deg, #00666A 80%, #fff 20%);
   background: -ms-linear-gradient(180deg, #00666A 80%, #fff 20%);
   background: -o-linear-gradient(180deg, #00666A 80%, #fff 20%);
-  background: linear-gradient(180deg, #00666A 80%, #fff 20%);
+  background: linear-gradient(180deg, #00666A 70%, #fff 30%);
 }
 
 .bg-gri3 {
@@ -10783,7 +10783,7 @@ h1 {
   background: -moz-linear-gradient(180deg, #00827F 80%, #fff 20%);
   background: -ms-linear-gradient(180deg, #00827F 80%, #fff 20%);
   background: -o-linear-gradient(180deg, #00827F 80%, #fff 20%);
-  background: linear-gradient(180deg, #00827F 80%, #fff 20%);
+  background: linear-gradient(180deg, #00827F 70%, #fff 30%);
 }
 
 .bg-gri4 {
@@ -10792,7 +10792,7 @@ h1 {
   background: -moz-linear-gradient(180deg, #00B5B0 80%, #fff 20%);
   background: -ms-linear-gradient(180deg, #00B5B0 80%, #fff 20%);
   background: -o-linear-gradient(180deg, #00B5B0 80%, #fff 20%);
-  background: linear-gradient(180deg, #00B5B0 80%, #fff 20%);
+  background: linear-gradient(180deg, #00B5B0 70%, #fff 30%);
 }
 
 
