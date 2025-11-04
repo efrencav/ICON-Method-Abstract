@@ -4041,7 +4041,7 @@ img {
   font-family: "Clash Grotesk", sans-serif;
   font-size: 100px;
   font-weight: 500;
-  line-height: 118%;
+  line-height: 110%;
   margin-top: 25px;
 }
 
@@ -8269,7 +8269,7 @@ img {
 }
 
 .analysis-three__thumb {
-  position: -webkit-sticky;
+  /* position: -webkit-sticky; */
   position: sticky;
   top: 65px;
   clip-path: polygon(100% 0, 100% 50%, 100% 80%, 81% 100%, 0 100%, 0 0);
