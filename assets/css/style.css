@@ -10687,7 +10687,7 @@ h1 {
   text-align: left;
   max-width: 1000px;
   width: 100%;
-  margin-left: 6%;
+  /* margin-left: 6%; */
 }
 
 .contact__form form button {
