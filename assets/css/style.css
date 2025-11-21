@@ -36,6 +36,14 @@ CSS TABLE OF CONTENTS
 @import "SF_Pro_Text.css";
 @import "ClashGrotesk.css";
 
+/* Improve viewport sizing on legacy IE/Edge mobile */
+@-ms-viewport {
+  width: device-width;
+}
+@viewport {
+  width: device-width;
+}
+
 :root {
   --main: #EF4237;
   --primary-color: #1b5b4a;
