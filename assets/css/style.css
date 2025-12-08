@@ -1696,6 +1696,14 @@ img {
   color: var(--paragraph-light) !important;
 }
 
+.intro-text {
+  color: var(--paragraph) !important;
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
 .primary-color {
   color: var(--main) !important;
 }
@@ -3738,7 +3746,7 @@ img {
 
 .banner-inner-area {
   overflow: hidden;
-  background-color: #32373E;
+  background-color: var(--primary-two);
 }
 
 .banner-inner__content {
@@ -3746,9 +3754,16 @@ img {
   max-width: 490px;
   margin: 0 auto;
 }
+
 .banner-inner__content-two {
   text-align: center;
   max-width: 600px;
+  margin: 0 auto;
+}
+
+.banner-inner__content-three {
+  text-align: left;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -3770,6 +3785,46 @@ img {
 }
 
 .banner-inner__content-two h5 a {
+  color: var(--white);
+}
+.banner-inner__content h5 {
+  margin-bottom: 10px;
+  color: var(--white);
+  display: inline-block;
+  padding: 5px 16px;
+  background-color: #696974;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.banner-inner__content h5 span {
+  color: var(--white);
+}
+
+.banner-inner__content h5 a {
+  color: var(--white);
+}
+.banner-inner__content-three h5 {
+  margin-bottom: 10px;
+  color: var(--white);
+  display: inline-block;
+  padding: 5px 16px;
+  background-color: #00817f;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.banner-inner__content-three h5 span {
+  color: var(--white);
+}
+
+.banner-inner__content-three h5 a {
   color: var(--white);
 }
 .banner-inner__content h5 {
@@ -5262,7 +5317,7 @@ img {
 }
 
 .service-details__left-item .item {
-  background-color: var(--sub-bg);
+  background-color: var(--primary-two);
   padding: 40px;
   border-radius: 16px;
   border: var(--border-1px);
@@ -5272,8 +5327,11 @@ img {
   display: flex;
   align-items: center;
   gap: 15px;
-  padding: 20px 0;
+  /* padding: 20px 0; */
   border-bottom: var(--border-1px);
+      border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgba(247, 250, 249, 0.2);
 }
 
 .service-details__left-item .service-book-now {
@@ -5552,11 +5610,11 @@ img {
 }
 
 .service-four__content {
-  display: flex;
+  /* display: flex; */
   justify-content: space-between;
   gap: 10px;
   padding-left: 60px;
-  margin-right: 150px;
+  margin-right: 70px;
 }
 
 @media (max-width: 1199px) {
@@ -12760,6 +12818,10 @@ ul.simple-list.long-list p { margin-bottom: 8px; }
   /* margin-bottom: 10px; */
 }
 
+.grey-text {
+  color: #6c757d;
+}
+
 .simple-list-two .list-item-two:before {
   content: '\f058'; /* FontAwesome check-circle */
   font-family: 'FontAwesome';
@@ -13634,4 +13696,88 @@ i[class*=" flaticon-"]:before {
 
 .fa-circle-check-two {
   color: #ef4237;
+}
+
+/* Indent all sidebar items */
+.simple-service-list li {
+  list-style: none;
+  margin: 0;
+  padding-left: 20px; /* 20px indentation */
+}
+
+/* Link styling */
+.simple-service-list li a {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  padding: 6px 0; /* balanced, tighter vertical spacing */
+  position: relative;
+  color: var(--text-color, #fff);
+  text-decoration: none; /* no underline */
+  border: none;
+}
+
+/* Hover + active styles (no underline) */
+.simple-service-list li a:hover,
+.simple-service-list li a.active-service {
+  color: #00B5B0;
+  font-weight: 600;
+}
+
+/* Active-state arrow indicator using Font Awesome icon */
+.simple-service-list li a.active-service::after {
+  content: "\f061"; /* arrow-right */
+  font-family: "Font Awesome 6 Free", "Font Awesome 6 Pro", "Font Awesome 5 Free";
+  font-weight: 400; /* regular weight for circle-arrow-right */
+  color: #00B5B0;
+  font-size: 14px;
+  margin-left: 8px;
+}
+
+
+/* ============================
+   Service Details – Sticky Sidebar
+   ============================ */
+
+/* ----- Service Details – Sticky Sidebar ----- */
+
+/* Make sure nothing clips the sticky element */
+.service-details-area,
+.service-details-area > .container,
+.service-details-area .row {
+  overflow: visible;
+}
+
+/* Give the section some extra height so sticky feels natural */
+.service-details-area {
+  padding-bottom: 160px; /* tweak up/down as needed */
+}
+
+/* Sticky sidebar on desktop only */
+@media (min-width: 992px) {
+  .service-details-area .col-lg-4 {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 120px;          /* adjust to clear your header */
+    align-self: flex-start;
+    height: fit-content;
+  }
+}
+
+/* Turn off sticky on small screens */
+@media (max-width: 991.98px) {
+  .service-details-area .col-lg-4 {
+    position: static;
+    top: auto;
+    height: auto;
+  }
+}
+
+/* Sidebar list spacing */
+.service-details__left-item .item {
+  margin-bottom: 24px;
+}
+
+.sidebar-title {
+  color: #e9f4fd;
 }
