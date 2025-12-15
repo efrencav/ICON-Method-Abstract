@@ -1240,6 +1240,9 @@ input {
 .pb-200 {
   padding-bottom: 200px;
 }
+.pb-300 {
+  padding-bottom: 300px;
+}
 
 .pl-5 {
   padding-left: 5px;
@@ -2682,7 +2685,7 @@ img {
 
 .logo {
   display: block;
-  width: 350px;
+  width: 275px;
 }
 
 .logo img {
@@ -3110,6 +3113,10 @@ img {
   transform: translateY(10px);
 }
 
+.header__main .main-menu ul li .sub-menu.sub-menu-wide {
+  width: 350px;
+}
+
 .header__main .main-menu ul li .sub-menu li {
   width: 100%;
 }
@@ -3122,11 +3129,29 @@ img {
   display: block;
   padding: 12px 20px;
   color: var(--heading-color) !important;
+  position: relative;
 }
 
 .header__main .main-menu ul li .sub-menu li a:hover {
   padding-left: 25px;
   color: var(--main) !important;
+}
+
+.header__main .main-menu ul li .sub-menu li a::after {
+  content: "→";
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%) translateX(-6px);
+  opacity: 0;
+  transition: var(--transition);
+  color: var(--main);
+  font-size: 14px;
+}
+
+.header__main .main-menu ul li .sub-menu li a:hover::after {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
 }
 
 .header__main .main-menu ul li:hover .sub-menu {
@@ -8996,7 +9021,7 @@ img {
   content: "";
   inset: 0;
   z-index: 0;
-  background: rgba(27, 91, 74, 0.44);
+  /* background: rgba(27, 91, 74, 0.44); */
 }
 
 .expertise-four__thumb-area .container-position {
@@ -12874,3 +12899,7 @@ h2 {
     letter-spacing: 0.5px;
     color: ffffff;
   }
+
+  .header__main .main-menu ul li .sub-menu.sub-menu-wide {
+  width: 350px;
+}
