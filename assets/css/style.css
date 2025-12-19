@@ -3701,6 +3701,26 @@ img {
   bottom: 15px;
   z-index: -1;
 }
+.banner__content-two {
+  max-width: auto;
+}
+
+.banner__content-two h1 span {
+  position: relative;
+  z-index: 1;
+  color: var(--white);
+}
+
+.banner__content-two h1 span::after {
+  position: absolute;
+  background-color: var(--main);
+  content: "";
+  width: 100%;
+  height: 15%;
+  left: 0;
+  bottom: 10px;
+  z-index: -1;
+}
 
 .banner-two-area {
   overflow: hidden;
@@ -7980,7 +8000,7 @@ img {
   position: absolute;
   content: "";
   inset: 10px;
-  background-color: rgba(255, 255, 255, 0.34);
+  background-color: rgba(207, 50, 50, 0.536);
   border-radius: 100%;
   z-index: -1;
   -webkit-animation: pluse_animate 10s infinite linear;
@@ -7994,7 +8014,7 @@ img {
   position: absolute;
   content: "";
   inset: 0;
-  background-color: rgba(255, 255, 255, 0.34);
+  background-color: rgb(255, 255, 255);
   border-radius: 100%;
   z-index: -1;
   -webkit-animation: pluse_animate 12s infinite linear;
@@ -13107,7 +13127,7 @@ p {
 /* SECTION BACKGROUND + SPACING */
 .about-section.division {
   position: relative;
-  padding-top: 160px;
+  padding-top: 100px;
   padding-bottom: 80px;
 }
 
@@ -13139,6 +13159,12 @@ p {
 .p-lg {
   font-size: 1.125rem;
   line-height: 1.7;
+  color: #666;
+  margin-bottom: 0;
+}
+.p-lg-two {
+  font-size: 1.85rem;
+  line-height: 1.5;
   color: #666;
   margin-bottom: 0;
 }
@@ -13912,4 +13938,105 @@ i[class*=" flaticon-"]:before {
   transition: opacity 0.25s ease-in-out;
 }
 
+.accent-underline {
+  position: relative;
+  display: inline-block;
+    padding-bottom: -10px; /* creates space BELOW the text */
+}
 
+.accent-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0px;
+  width: 100%;
+  height: 5px;
+  background-color: #ef4237;
+  border-radius: 3px;
+}
+
+
+.orange-text {
+  color: #ef4237;;
+}
+
+.fit-accent {
+  color: #ef4237;
+}
+
+/* Shared card styling */
+.fit-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 28px;
+  border: 1px solid rgba(17, 43, 50, 0.10);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+}
+
+.fit-card__head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Icons */
+.fit-icon {
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  font-size: 18px;
+}
+
+.fit-icon--yes {
+  background: rgba(239, 66, 55, 0.12);
+  color: #ef4237;
+}
+
+.fit-icon--no {
+  background: rgba(69, 68, 69, 0.10);
+  color: #454445;
+}
+
+/* Strong Fit emphasis */
+.fit-card--yes {
+  border: 3px solid #ef4237;
+}
+
+/* Not a Fit de-emphasis */
+.fit-card--no {
+  background: #f7f7f7;
+  border: 3px solid #454445;
+}
+
+/* Optional: improve list spacing */
+.fit-card .simple-list .list-item {
+  margin-bottom: 1px;
+}
+.fit-card .simple-list .list-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Replace bullets with X icons only in "Not a Fit" */
+.fit-card--no .simple-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.fit-card--no .simple-list .list-item {
+  position: relative;
+  padding-left: 32px; /* space for icon */
+}
+
+.fit-card--no .simple-list .list-item::before {
+  content: "\f057"; /* Font Awesome circle-xmark */
+font-family: 'FontAwesome';
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  /* top: 0.2em; */
+  color: #454445;
+  font-size: 16px;
+}
