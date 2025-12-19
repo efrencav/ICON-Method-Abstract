@@ -13168,6 +13168,12 @@ p {
   color: #666;
   margin-bottom: 0;
 }
+.p-lg-three {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: #fff;
+  margin-bottom: 0;
+}
 
 /* IMAGE SECTION */
 .about-1-img {
