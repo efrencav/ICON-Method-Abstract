@@ -12478,7 +12478,7 @@ section[id] {
 /* Center the ICON Method section */
 #icon-method .section-header__wrp {
   text-align: center;
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 

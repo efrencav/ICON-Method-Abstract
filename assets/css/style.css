@@ -12593,7 +12593,7 @@ section[id] {
 /* Center the ICON Method section */
 #icon-method .section-header__wrp {
   text-align: center;
-  max-width: 800px;
+  /* max-width: 800px; */
   margin: 0 auto;
 }
 
@@ -14045,4 +14045,23 @@ font-family: 'FontAwesome';
   /* top: 0.2em; */
   color: #454445;
   font-size: 16px;
+}
+
+.hero-efren {
+  background-image: url("../assets/images/bg/slider-efren-desktop.webp");
+  background-size: cover;
+  background-position: center;
+}
+
+@media (max-width: 1200px) {
+  .hero-efren {
+    background-image: url("./assets/images/bg/slider-efren-tablet.webp");
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-efren {
+    background-image: url("./assets/images/bg/slider-efren-mobile.webp");
+    background-position: center top;
+  }
 }
