@@ -2,6 +2,14 @@
 <html lang="en">
 
 <head>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  dataLayer.push({
+    pageType: "article",
+    expertiseCategory: "cafe-diario-case-study",
+  });
+</script>
+
   <!-- Google Tag Manager -->
   <script>(function (w, d, s, l, i) {
       w[l] = w[l] || []; w[l].push({
@@ -164,14 +172,13 @@
                 <a href="javascript:void(0)">Insights <i class="fa-solid fa-angle-down"></i></a>
                 <ul class="sub-menu">
                   <li><a href="index.html">Articles</a></li>-->
-                  <li><a href="../../case-studies/index.html">Case Studies</a></li>
+                  <!-- <li><a href="../../case-studies/index.html">Case Studies</a></li> -->
                 </ul>
               </li>
             </ul>
           </nav>
         </div>
-        <a href="../../forms/book-call/index.html" class="btn-menu d-none d-lg-inline-block">Book Your Strategy Call<i
-            class="fa-regular fa-circle-arrow-right ml-10"></i></a>
+        <a id="cta_book_strategy_call_click" href="../../forms/book-call/index.html" class="btn-menu d-none d-lg-inline-block">Book a Brand Decision Session<i class="fa-regular fa-circle-arrow-right ml-10"></i></a>
         <div class="bars d-block d-lg-none">
           <i id="openButton" class="fa-solid fa-bars"></i>
         </div>

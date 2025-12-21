@@ -5084,7 +5084,7 @@ img {
 }
 
 .about-four__content.v1 .section-header2 {
-  max-width: 600px;
+  max-width: 800px;
 }
 
 .about-four__content.v1 .section-header2 p {
@@ -14063,5 +14063,31 @@ font-family: 'FontAwesome';
   .hero-efren {
     background-image: url("./assets/images/bg/slider-efren-mobile.webp");
     background-position: center top;
+  }
+}
+
+.bio-text {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 1.125rem;      /* 18px */
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+}
+.signature-image {
+  max-width: 180px;   /* adjust as needed */
+  width: 100%;
+  height: auto;
+}
+.about-four__content.v1 .section-header2 p.no-margin-top {
+  margin-top: 0;
+}
+
+.copy-narrow {
+  max-width: 540px;
+}
+
+@media (max-width: 991px) {
+  .copy-narrow {
+    max-width: 100%;
   }
 }

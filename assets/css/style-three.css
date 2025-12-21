@@ -4476,7 +4476,7 @@ img {
 }
 
 .brand__title {
-  position: relative;
+  /* position: relative; */
   text-transform: uppercase;
   text-align: left;
   z-index: 1;
@@ -10032,7 +10032,7 @@ a {
 }
 
 .banner__content {
-  max-width: 708px;
+  max-width: 950px;
 }
 
 .banner__content h1 span::after {
@@ -10377,7 +10377,7 @@ h1 {
 }
 
 .contenttab {
-  padding: 50px 0;
+  padding: 25px 0;
 }
 
 .bg-dblue .section-header-two h5 {
@@ -10993,6 +10993,14 @@ h1 {
 }
 .about__counter23 .coun-item h3 span { color: #fff; }
 
+.coun-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
 .about__counter23 .coun-item p {
   font-weight: 500;
   font-size: 28px;  /* large label */
@@ -11020,6 +11028,7 @@ h1 {
 .about__counter24 .coun-item h3 {
   color: var(--main);       /* your theme var; swap if needed */
   max-width: 192px;
+  text-align: center;
   width: 100%;
   font-weight: 700;
   font-size: 67px;          /* large number */
@@ -12902,4 +12911,33 @@ h2 {
 
   .header__main .main-menu ul li .sub-menu.sub-menu-wide {
   width: 350px;
+}
+
+.centered-headline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.centered-headline .brand__title {
+  margin: 0;
+  white-space: nowrap;
+}
+
+.centered-headline .line {
+  flex: 1;
+  height: 1px;
+  background-color: #ccc;
+  max-width: 100px;
+}
+.copy-narrow {
+  max-width: 640px;
+}
+
+@media (max-width: 991px) {
+  .copy-narrow {
+    max-width: 100%;
+  }
 }
