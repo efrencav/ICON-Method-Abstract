@@ -2,13 +2,21 @@
 <html lang="en">
 
 <head>
-         <script>
-  window.dataLayer = window.dataLayer || [];
-  dataLayer.push({
-    pageType: "home",
-    expertiseCategory: "home",
-  });
-</script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    dataLayer.push({
+      event: "page_meta",
+      pageType: "home",
+      pageName: "Home",
+      expertiseCategory: "home",
+      language: document.documentElement.lang || "en",
+      templateVersion: "2025-12-23"
+    });
+    // Optional helper for consistent event pushes from inline scripts
+    window.ACTrack = function (eventName, params) {
+      try { window.dataLayer.push(Object.assign({ event: eventName }, params || {})); } catch (e) { }
+    };
+  </script>
   <!-- Google Tag Manager -->
   <script>(function (w, d, s, l, i) {
       w[l] = w[l] || []; w[l].push({
@@ -19,6 +27,26 @@
           'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
     })(window, document, 'script', 'dataLayer', 'GTM-P93WLQG');</script>
   <!-- End Google Tag Manager -->
+  <script>
+    // Lightweight click instrumentation for GTM (GTM can also capture clicks without this)
+    document.addEventListener('click', function (e) {
+      var el = e.target && e.target.closest ? e.target.closest('[data-track]') : null;
+      if (!el) return;
+      var payload = {
+        event: "ui_interaction",
+        trackType: el.getAttribute('data-track'),
+        elementId: el.id || null,
+        cta: el.getAttribute('data-cta') || null,
+        nav: el.getAttribute('data-nav') || null,
+        network: el.getAttribute('data-network') || null,
+        location: el.getAttribute('data-location') || null,
+        href: el.getAttribute('href') || null,
+        text: (el.textContent || "").trim().slice(0, 80)
+      };
+      try { window.dataLayer = window.dataLayer || []; window.dataLayer.push(payload); } catch (err) { }
+    }, true);
+  </script>
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-GD7MW94M5V"></script>
   <script>
@@ -192,28 +220,31 @@
   <!-- Preloader area end -->
 
   <!-- Top header area start here -->
-  <div class="header-top d-none d-lg-block">
+  <div id="topbar" class="header-top d-none d-lg-block">
     <div class="container container-extend">
       <div class="header-top-wrp">
         <ul class="info">
           <li>
             <i class="fa-solid fa-paper-plane"></i>
-            <a
+            <a id="contact_email_top" data-track="contact" data-type="email" data-location="topbar"
               href="mailto:efren@abstract-creative.com?subject=Abstract Creative: Requesting Information for Digital Marketing Services">efren@abstract-creative.com</a>
           </li>
-<li class="ml-40">
-  <p></p><i class="fa-solid fa-phone"></i>832.370.7322</p>
-</li>
+          <li class="ml-40">
+            <p></p><i class="fa-solid fa-phone"></i>832.370.7322</p>
+          </li>
         </ul>
         <ul class="link-info">
           <li class="bor-right">
-            <a href="https://www.facebook.com/AbstractCreative"><i class="fa-brands fa-facebook-f"></i></a>
+            <a id="social_facebook_top" data-track="social" data-network="facebook" data-location="topbar"
+              href="https://www.facebook.com/AbstractCreative"><i class="fa-brands fa-facebook-f"></i></a>
           </li>
           <li class="bor-right">
-            <a href="https://www.instagram.com/abstr8ct/"><i class="fa-brands fa-instagram-square"></i></a>
+            <a id="social_instagram_top" data-track="social" data-network="instagram" data-location="topbar"
+              href="https://www.instagram.com/abstr8ct/"><i class="fa-brands fa-instagram-square"></i></a>
           </li>
           <li class="bor-right">
-            <a href="https://www.linkedin.com/company/abstract-creative-houston/"><i
+            <a id="social_linkedin_top" data-track="social" data-network="linkedin" data-location="topbar"
+              href="https://www.linkedin.com/company/abstract-creative-houston/"><i
                 class="fa-brands fa-linkedin"></i></a>
           </li>
         </ul>
@@ -223,7 +254,7 @@
   <!-- Top header area end here -->
 
   <!-- Header area start here -->
-  <header class="header-area">
+  <header id="site-header" class="header-area">
     <div class="container container-extend">
       <div class="header__main">
         <a href="index.html" class="logo">
@@ -232,10 +263,11 @@
         <a href="index.html" class="logo logo-light">
           <img src="assets/images/logo/logo-stacked.svg" alt="logo" />
         </a>
-        <div class="main-menu">
+        <div id="primary-nav" class="main-menu">
           <nav>
             <ul>
-              <li><a href="javascript:void(0)">ICON Method <i class="fa-solid fa-angle-down"></i></a>
+              <li><a id="nav_icon_method" data-track="nav" data-nav="icon_method" href="javascript:void(0)">ICON Method
+                  <i class="fa-solid fa-angle-down"></i></a>
                 <ul class="sub-menu">
                   <li><a href="./icon-method/index.html">ICON Method Overview</a></li>
                   <li><a href="./icon-method/services.html">Services Overview</a></li>
@@ -244,7 +276,8 @@
                   <li><a href="./icon-method/market-authority.html">Market Authority</a></li>
                 </ul>
               </li>
-              <li><a href="javascript:void(0)">Expertise <i class="fa-solid fa-angle-down"></i></a>
+              <li><a id="nav_expertise" data-track="nav" data-nav="expertise" href="javascript:void(0)">Expertise <i
+                    class="fa-solid fa-angle-down"></i></a>
                 <ul class="sub-menu">
                   <li><a href="./expertise/brand-strategy.html">Brand Strategy</a></li>
                   <li><a href="./expertise/messaging-conversion.html">Messaging & Conversion</a></li>
@@ -255,25 +288,26 @@
                 </ul>
               </li>
               <li>
-                <a href="./work/index.html">Work </a>
+                <a id="nav_work" data-track="nav" data-nav="work" href="./work/index.html">Work</a>
               </li>
 
               <li>
 
-                <a href="./about/index.html">About</a>
+                <a id="nav_about" data-track="nav" data-nav="about" href="./about/index.html">About</a>
 
               </li><!--<li>
                 <a href="javascript:void(0)">Insights <i class="fa-solid fa-angle-down"></i></a>
                 <ul class="sub-menu">
                   <li><a href="./insights/articles/index.html">Articles</a></li>--><!--
                   <li><a href="./case-studies/index.html">Case Studies</a></li>-->
-                </ul>
-              </li>
+            </ul>
+            </li>
             </ul>
           </nav>
         </div>
-        <a id="cta_book_strategy_call_click" href="forms/book-call/index.html" class="btn-menu d-none d-lg-inline-block">Book a Brand Decision Session<i
-            class="fa-regular fa-circle-arrow-right ml-10"></i></a>
+        <a id="cta_book_strategy_call_header" href="forms/book-call/index.html"
+          class="btn-menu d-none d-lg-inline-block" data-track="cta" data-cta="book_strategy_call"
+          data-location="header">Book a Brand Decision Session<i class="fa-regular fa-circle-arrow-right ml-10"></i></a>
         <div class="bars d-block d-lg-none">
           <i id="openButton" class="fa-solid fa-bars"></i>
         </div>
@@ -292,8 +326,8 @@
       <li><i class="fa-solid primary-color fa-location-dot"></i> <a
           href="https://abstract-creative.com/">abstract-creative.com</a>
       </li>
-      <li class="py-2"><i class="fa-solid primary-color fa-phone-volume"></i> <a
-          href="tel:+18323707322">832-370-7322</a>
+      <li class="py-2"><i class="fa-solid primary-color fa-phone-volume"></i> <a id="contact_phone_sidebar"
+          data-track="contact" data-type="phone" data-location="sidebar" href="tel:+18323707322">832-370-7322</a>
       </li>
       <li><i class="fa-solid primary-color fa-paper-plane"></i> <a
           href="mailto:efren@abstract-creative.com">efren@abstract-creative.com</a></li>
@@ -310,20 +344,25 @@
   <main>
     <!-- Banner area start here -->
 
-    <section class="banner-area pt-120 pb-120 bg-image" data-background="./assets/images/bg/efren-slider.jpg"
+    <section id="hero" class="banner-area pt-120 pb-120 bg-image" data-background="./assets/images/bg/efren-slider.jpg"
       aria-label="Efren Cavazos leading Abstract Creative – strategic brand transformation partner in Houston"
       loading="lazy">
       <div class="container container-extend">
         <div class="banner__content">
           <h1 class="wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1000ms">
-            Most companies don’t have a marketing problem. They have a <span><a href="icon-method/index.html">brand decision</a></span> problem.
+            Most companies don’t have a marketing problem. They have a <span><a href="icon-method/index.html">brand
+                decision</a></span> problem.
           </h1>
           <p class="mt-50 wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1000ms">
-Abstract Creative helps B2B and professional services companies eliminate brand confusion, align growth systems, and scale with confidence using the ICON Method. We exist to define the decisions your growth depends on.</p>
+            Abstract Creative helps B2B and professional services companies eliminate brand confusion, align growth
+            systems, and scale with confidence using the ICON Method. We exist to define the decisions your growth
+            depends on.</p>
 
           </p>
           <div class="mt-30">
-            <a id="cta-icon-method" href="#icon-method" class="btn-one wow fadeInUp" data-wow-delay="250ms" data-wow-duration="900ms">How the ICON Method Works</a>
+            <a id="cta-icon-method" href="#icon-method" class="btn-one wow fadeInUp" data-wow-delay="250ms"
+              data-wow-duration="900ms" data-track="cta" data-cta="icon_method_scroll" data-location="hero">How the ICON
+              Method Works</a>
           </div>
           <!-- Disclaimer -->
           <!-- <p class="disclaimer-text mt-3 wow fadeInUp" data-wow-delay="500ms" data-wow-duration="900ms">
@@ -333,23 +372,21 @@ Abstract Creative helps B2B and professional services companies eliminate brand 
       </div>
     </section>
 
-    <section class="building-brands-homepage pt-90">
+    <section id="trust-metrics" class="building-brands-homepage pt-90">
       <div class="container container-extend">
         <div class="row g-4 text-center d-flex align-items-stretch stats-row">
           <h6>Our work is measured by clarity, alignment, and performance — not deliverables.</h6>
           <div class="centered-headline">
-  <span class="line"></span>
-  <h5 class="brand__title">Trusted by Growing Brands & Industry Leaders</h5>
-  <span class="line"></span>
-</div>
-
-
+            <span class="line"></span>
+            <h5 class="brand__title">Trusted by Growing Brands & Industry Leaders</h5>
+            <span class="line"></span>
+          </div>
           <div class="col-md-4 d-flex stat-col">
             <div class="about__counter about__counter24 mt-40 w-100 h-100 d-flex">
               <div class="coun-item coun-item-vertical wow fadeInDown m-auto" data-wow-delay="00ms"
                 data-wow-duration="1000ms">
                 <h3><span class="count">25 </span>+</h3>
-                <p class="mt-20">Years Guiding <br/>Brand Decisions</p>
+                <p class="mt-20">Years Guiding <br />Brand Decisions</p>
               </div>
             </div>
           </div>
@@ -369,7 +406,7 @@ Abstract Creative helps B2B and professional services companies eliminate brand 
               <div class="coun-item coun-item-vertical wow fadeInDown m-auto" data-wow-delay="200ms"
                 data-wow-duration="1000ms">
                 <h3><span class="count">32 </span>%</h3>
-                <p class="mt-20">Lift After Strategic<br/> Repositioning</p>
+                <p class="mt-20">Lift After Strategic<br /> Repositioning</p>
               </div>
             </div>
           </div>
@@ -379,7 +416,7 @@ Abstract Creative helps B2B and professional services companies eliminate brand 
     </section>
 
     <!-- Brand area start here -->
-    <div class="brand-area pt-60 pb-90">
+    <div id="client-logos" class="brand-area pt-60 pb-90">
       <div class="container container-extend">
         <div class="swiper brand__slider">
           <div class="swiper-wrapper">
@@ -417,11 +454,12 @@ Abstract Creative helps B2B and professional services companies eliminate brand 
     </div>
 
     <!-- The Pain of Staying Stuck (3-up, left-aligned) -->
-    <section class="painpoints-area pt-80 pb-80 bg-beige pain-stuck-3up">
+    <section id="painpoints" class="painpoints-area pt-80 pb-80 bg-beige pain-stuck-3up">
       <div class="container container-extend">
         <div class="section-header-two wow fadeInUp" data-wow-delay="0ms" data-wow-duration="900ms">
           <h2>Brand Growth Challenges Businesses Face</h2>
-          <p class="mt-2">Brand growth and messaging break down fast: When brand clarity breaks down, growth stalls. When systems aren’t aligned, money leaks.<br/> When leadership avoids hard decisions, momentum dies.</p>
+          <p class="mt-2">Brand growth and messaging break down fast: When brand clarity breaks down, growth stalls.
+            When systems aren’t aligned, money leaks.<br /> When leadership avoids hard decisions, momentum dies.</p>
         </div>
 
         <div class="row g-4 mt-30">
@@ -480,8 +518,9 @@ Abstract Creative helps B2B and professional services companies eliminate brand 
             <h2 class="wow fadeInUp mb-20" data-wow-delay="200ms" data-wow-duration="1000ms">
               A Four-Phase Framework That Aligns Brand, Systems, and Performance
             </h2>
-            <p class="wow fadeInUp mb-40" data-wow-delay="300ms" data-wow-duration="1000ms">The ICON Method is not a checklist or a campaign plan.
-It is a strategic operating system that aligns leadership, brand, and growth decisions.</p>
+            <p class="wow fadeInUp mb-40" data-wow-delay="300ms" data-wow-duration="1000ms">The ICON Method is not a
+              checklist or a campaign plan.
+              It is a strategic operating system that aligns leadership, brand, and growth decisions.</p>
           </div>
           <!-- <p class="wow fadeInUp mb-20" data-wow-delay="300ms" data-wow-duration="1000ms">We align identity, messaging,
             and systems into one growth engine — giving your brand the clarity, consistency, and performance it needs to
@@ -543,7 +582,9 @@ It is a strategic operating system that aligns leadership, brand, and growth dec
           </div>
           <div class="row">
             <div class="col-md-3 mx-auto mb-60">
-              <a href="icon-method/index.html" class="btn-one alink5 w-100 text-center mt-10">
+              <a id="cta_explore_icon_method" href="icon-method/index.html"
+                class="btn-one alink5 w-100 text-center mt-10" data-track="cta" data-cta="explore_icon_method"
+                data-location="icon_method_section">
                 Explore the ICON Method
                 <i class="fa-regular fa-arrow-right ml-10"></i>
               </a>
@@ -556,7 +597,7 @@ It is a strategic operating system that aligns leadership, brand, and growth dec
     <!-- Process area end here -->
 
     <!-- How it works -->
-    <section class="how-it-works-area pt-100 pb-100 bg-black text-white">
+    <section id="how-it-works" class="how-it-works-area pt-100 pb-100 bg-black text-white">
       <div class="container container-extend">
         <div class="section-header-two text-center wow fadeInUp" data-wow-delay="0ms" data-wow-duration="900ms">
           <div class="section-header-inner mx-auto" style="max-width: 780px;">
@@ -668,14 +709,16 @@ It is a strategic operating system that aligns leadership, brand, and growth dec
 
 
     <!-- Pricing area start here -->
-    <section class="pricing-area pt-80 pb-100 bg-dblue2 position-relative">
+    <section id="services-tiers" class="pricing-area pt-80 pb-100 bg-dblue2 position-relative">
       <!-- <img title="pricing" src="assets/images/pricing-bg-img.jpg" alt="" class="bgimagef" /> -->
       <div class="container position-relative">
         <div class="section-header-two text-center mb-40">
           <h5 class="wow fadeInUp text-green" data-wow-delay="100ms" data-wow-duration="1000ms">Services at a Glance
           </h5>
-          <h2 class="wow fadeInUp cwhite" data-wow-delay="200ms" data-wow-duration="1000ms">Strategic Engagements Aligned <br/>to Your Growth Stage</h2>
-          <p class="wow fadeInUp cwhite mb-40" data-wow-delay="400ms" data-wow-duration="1000ms"> Each engagement is designed around decision depth, not deliverables.</p>
+          <h2 class="wow fadeInUp cwhite" data-wow-delay="200ms" data-wow-duration="1000ms">Strategic Engagements
+            Aligned <br />to Your Growth Stage</h2>
+          <p class="wow fadeInUp cwhite mb-40" data-wow-delay="400ms" data-wow-duration="1000ms"> Each engagement is
+            designed around decision depth, not deliverables.</p>
           <!-- <p class="wow fadeInUp cwhite" data-wow-delay="400ms" data-wow-duration="1000ms">
             Three service tiers designed to meet you where you are. <br />
             Gain clarity with <strong>Foundation</strong>, scale systems with <strong>Pro Growth</strong>, and dominate
@@ -722,7 +765,8 @@ It is a strategic operating system that aligns leadership, brand, and growth dec
           </div>
           <div class="row mt-30">
             <div class="col-md-3 mx-auto wow fadeInUp" data-wow-delay="600ms" data-wow-duration="1000ms">
-              <a id="cta_tier_select" href="icon-method/services.html" class="btn-two w-100 text-center mt-10 alink3">
+              <a id="cta_tier_select" href="icon-method/services.html" class="btn-two w-100 text-center mt-10 alink3"
+                data-track="cta" data-cta="find_your_tier" data-location="services_tiers">
                 Find Your Tier
                 <i class="fa-regular fa-arrow-right ml-10"></i>
               </a>
@@ -735,7 +779,7 @@ It is a strategic operating system that aligns leadership, brand, and growth dec
     <!-- Pricing area end here -->
 
     <!-- Testimonial area start here -->
-    <section class="testimonial-area mt-80">
+    <section id="testimonials" class="testimonial-area mt-80">
       <div class="container container-extend">
         <div class="row g-4">
           <div class="col-lg-6">
@@ -857,7 +901,7 @@ It is a strategic operating system that aligns leadership, brand, and growth dec
     <!-- Testimonial area end here -->
 
     <!-- started area start here -->
-    <section class="started-area pt-80 pb-80">
+    <section id="primary-cta" class="started-area pt-80 pb-80">
       <div class="container container-extend wow fadeInUp" data-wow-delay="100ms" data-wow-duration="1000ms">
         <div class="started__item primary-bg bg-image" data-background="assets/images/bg/started-bg.png"
           alt="Abstract Creative call-to-action background – Book a Brand Decision Session section" loading="lazy">
@@ -871,7 +915,8 @@ It is a strategic operating system that aligns leadership, brand, and growth dec
             </p> -->
           </div>
           <div class="btn__group text-center wow fadeInDown" data-wow-delay="300ms" data-wow-duration="1000ms">
-            <a id="cta_book_strategy_call_click" href="forms/book-call/index.html" class="btn-two btn-black">Book a Brand Decision Session<i
+            <a id="cta_book_strategy_call_started" href="forms/book-call/index.html" class="btn-two btn-black"
+              data-track="cta" data-cta="book_strategy_call" data-location="midpage">Book a Brand Decision Session<i
                 class="fa-regular fa-arrow-right ml-10"></i></a>
           </div>
         </div>
@@ -881,7 +926,7 @@ It is a strategic operating system that aligns leadership, brand, and growth dec
   </main>
 
   <!-- Footer area start here -->
-  <footer class="footer-area footer-bg bg-image" data-background="assets/images/bg/footer-bg.png"
+  <footer id="site-footer" class="footer-area footer-bg bg-image" data-background="assets/images/bg/footer-bg.png"
     aria-label="Abstract Creative website footer background with brand pattern" loading="lazy">
     <div class="footer__main-wrp">
       <div class="container container-extend">
