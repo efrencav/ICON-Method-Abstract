@@ -200,7 +200,7 @@
               <h2 class="text-capitalize mb-50 text-center">Tell us about your goals</h2>
 
               <form id="contact-form" name="contact" method="POST" action="/thank-you/book-call/" data-netlify="true"
-                data-netlify-honeypot="bot-field" class="gform_wrapper ac-form" novalidate>
+                data-netlify-honeypot="bot-field" class="gform_wrapper ac-form">
                 <!-- Netlify required -->
                 <input type="hidden" name="form-name" value="contact" />
 
@@ -296,11 +296,14 @@
                   </li>
 
                   <!-- Consent -->
-<li id="field_contact_consent"
-  class="gfield gfield--type-consent gfield--width-full gfield_contains_required gfield_visibility_visible">
-
-  <div class="gfield_description gfield_consent_description"
-    id="gfield_consent_description_contact_consent" tabindex="0">
+<li
+  id="field_contact_consent"
+  class="gfield gfield--type-consent gfield--width-full gfield_contains_required gfield_visibility_visible"
+>
+  <div
+    class="gfield_description gfield_consent_description"
+    id="gfield_consent_description_contact_consent"
+  >
     By submitting this form, you agree to the
     <a href="/legal/privacy.html">Privacy Policy</a>
     and consent to receiving emails from Abstract Creative.
@@ -313,17 +316,19 @@
       id="input_contact_consent"
       value="1"
       required
-      aria-describedby="gfield_consent_description_contact_consent"
       aria-required="true"
+      aria-describedby="gfield_consent_description_contact_consent"
     />
+
     <label
-      class="gform-field-label gform-field-label--type-inline gfield_consent_label"
       for="input_contact_consent"
+      class="gform-field-label gform-field-label--type-inline gfield_consent_label"
     >
       I agree to the privacy policy.
     </label>
   </div>
 </li>
+
 <li class="gfield gform_footer top_label">
   <div class="row">
     <div class="col-md-6 mx-auto">
