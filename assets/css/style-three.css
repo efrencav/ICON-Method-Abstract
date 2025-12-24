@@ -4481,6 +4481,8 @@ img {
   text-align: left;
   z-index: 1;
   letter-spacing: 2px;
+    overflow: hidden;
+  text-align: center;
 }
 
 .brand__title::after {
@@ -4506,9 +4508,22 @@ img {
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .brand__title::after {
     display: none;
+  }
+
+  .brand-title {
+    width: 100%;
+    position: relative;
+  }
+
+  .centered-headline .brand__title {
+    margin: 0 auto;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    text-align: center;
   }
 }
 
@@ -12917,8 +12932,9 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 10px;
   margin-bottom: 40px;
+      word-wrap: break-word;
 }
 
 .centered-headline .brand__title {
