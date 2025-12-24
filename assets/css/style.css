@@ -8101,17 +8101,17 @@ img {
 .contact__form form input {
   padding: 10px 20px;
   border-radius: 10px;
-  border: 1px solid var(--border);
+  border: 1px solid var(--main);
   width: 100%;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .contact__form form textarea {
   padding: 10px 20px;
   border-radius: 10px;
-  border: 1px solid var(--border);
+  border: 1px solid var(--main);
   width: 100%;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   height: 130px;
 }
 
@@ -14090,4 +14090,260 @@ font-family: 'FontAwesome';
   .copy-narrow {
     max-width: 100%;
   }
+}
+
+/* =====================================================
+   Abstract Creative – Form Typography & Links
+   Mirrors header/menu + global text system
+===================================================== */
+
+/* Base text inside form */
+.ac-form,
+.ac-form p,
+.ac-form ul,
+.ac-form li,
+.ac-form ol,
+.ac-form label,
+.ac-form input,
+.ac-form select,
+.ac-form textarea {
+  font-family: "Open Sans", sans-serif;
+}
+
+/* Labels mimic menu link weight */
+.ac-form .gfield_label {
+  font-weight: 600;
+}
+
+/* Inputs inherit body text clarity */
+.ac-form input,
+.ac-form select,
+.ac-form textarea {
+  font-family: "Open Sans", sans-serif;
+  color: var(--heading-color);
+}
+
+/* Links inside form (privacy policy, inline links) */
+.ac-form a {
+  display: inline-block;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  color: var(--heading-color);
+  text-decoration: underline;
+  transition: var(--transition);
+}
+
+/* Link hover — matches header behavior */
+.ac-form a:hover {
+  opacity: 0.75;
+  transform: translateY(-1px);
+}
+
+/* Consent copy text */
+.ac-form .gfield_consent_description {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+}
+
+/* Submit button inherits menu authority */
+.ac-form .gform_button {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+}
+
+/* Optional: match menu vertical rhythm */
+.ac-form .gfield_label {
+  padding-bottom: 4px;
+}
+
+/* Reduce underline weight for UI cleanliness */
+.ac-form a {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+/* =====================================================
+   Abstract Creative – Contact Form Styling
+   Mirrors .header__main .sub-menu system
+===================================================== */
+
+.ac-form {
+  /* max-width: 860px; */
+  margin: 0 auto;
+}
+
+/* Reset list spacing */
+.ac-form .gform_fields {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Two-column row wrapper */
+.ac-form .ac-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 26px;
+  /* margin-bottom: 18px; */
+}
+
+/* Individual field wrapper */
+.ac-form .gfield {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Labels */
+.ac-form .gfield_label {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+/* Inputs, selects, textarea */
+.ac-form input,
+.ac-form select,
+.ac-form textarea {
+  width: 100%;
+  border: var(--border-1px, 1px solid rgba(0,0,0,.15));
+  box-shadow: var(--shadow);
+  background-color: var(--white, #fff);
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 15px;
+  line-height: 1.3;
+  transition: var(--transition);
+  outline: none;
+}
+
+/* Textarea sizing */
+.ac-form textarea {
+  min-height: 160px;
+  resize: vertical;
+}
+
+/* Hover state */
+.ac-form input:hover,
+.ac-form select:hover,
+.ac-form textarea:hover {
+  transform: translateY(-1px);
+}
+
+/* Focus state – same interaction philosophy as sub-menu */
+.ac-form input:focus,
+.ac-form select:focus,
+.ac-form textarea:focus {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Placeholder tone */
+.ac-form ::placeholder {
+  color: rgba(0,0,0,.45);
+}
+
+/* Full-width fields (message, consent, submit) */
+.ac-form .gfield--width-full {
+  margin-bottom: 18px;
+}
+
+/* Consent block */
+.ac-form .gfield_consent_description {
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+  color: rgba(0,0,0,.75);
+}
+
+.ac-form .ginput_container_consent {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.ac-form .ginput_container_consent input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-top: 3px;
+}
+
+/* Submit button – same surface language */
+.ac-form .gform_button {
+  border: var(--border-1px);
+  box-shadow: var(--shadow);
+  background-color: var(--white);
+  border-radius: 999px;
+  padding: 12px 20px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+/* Button hover */
+.ac-form .gform_button:hover {
+  transform: translateY(-1px);
+}
+
+/* Button active */
+.ac-form .gform_button:active {
+  transform: translateY(0);
+}
+
+/* Mobile */
+@media (max-width: 720px) {
+  .ac-form .ac-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+/* Original select (fallback + consistency) */
+.ac-form select.large.gfield_select {
+  width: 100%;
+}
+
+/* Nice Select generated structure */
+.ac-form .nice-select.large,
+.ac-form .nice-select.gfield_select {
+  width: 100% !important;
+}
+/* What's Your Role – dropdown panel */
+.ac-form #input_contact_role + .nice-select .list {
+  width: 100%;
+  min-width: 100%;
+}
+
+.nice-select {
+    -webkit-tap-highlight-color: transparent;
+    background-color: #fff;
+    border-radius: 0px;
+    border: solid 1px var(--main);
+    box-sizing: border-box;
+    clear: both;
+    cursor: pointer;
+    display: block;
+    float: left;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: normal;
+    height: 42px;
+    line-height: 40px;
+    outline: none;
+    padding-left: 18px;
+    padding-right: 30px;
+    position: relative;
+    text-align: left !important;
+    -webkit-transition: all 0.2s 
+ease-in-out;
+    transition: all 0.2s 
+ease-in-out;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    white-space: nowrap;
+    width: auto;
+    border-radius: 10px;
 }
