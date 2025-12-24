@@ -14143,6 +14143,7 @@ font-family: 'FontAwesome';
 .ac-form .gfield_consent_description {
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
+    text-align: center;
 }
 
 /* Submit button inherits menu authority */
@@ -14257,9 +14258,11 @@ font-family: 'FontAwesome';
 }
 
 .ac-form .ginput_container_consent {
-  display: flex;
+ display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 10px;
-  align-items: flex-start;
+  margin-top: 8px
 }
 
 .ac-form .ginput_container_consent input[type="checkbox"] {
@@ -14346,4 +14349,30 @@ ease-in-out;
     white-space: nowrap;
     width: auto;
     border-radius: 10px;
+}
+
+.ac-form .gfield_consent_label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+}
+/* Keep checkbox + label together and aligned */
+.ac-form .ginput_container_consent {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.ac-form .ginput_container_consent input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-top: 3px;
+  flex: 0 0 auto;
+}
+
+.ac-form .ginput_container_consent label {
+  margin: 0;
+  text-align: center;
+  cursor: pointer;
 }

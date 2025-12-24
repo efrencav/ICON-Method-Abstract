@@ -196,14 +196,15 @@
         <div class="row g-5 align-items-start">
           <div class="col-lg-12">
             <div class="contact__form">
-              <h2 class="text-capitalize mb-10">Tell us about your goals</h2>
-              <p class="mb-30">We respond within one business day with next steps.</p>
-              <form id="contact-form" name="contact" method="POST" action="../thank-you/book-call/index.html" data-netlify="true"
+
+              <h2 class="text-capitalize mb-50 text-center">Tell us about your goals</h2>
+
+              <form id="contact-form" name="contact" method="POST" action="/thank-you/book-call/" data-netlify="true"
                 data-netlify-honeypot="bot-field" class="gform_wrapper ac-form" novalidate>
                 <!-- Netlify required -->
                 <input type="hidden" name="form-name" value="contact" />
 
-                <!-- Honeypot (Netlify) -->
+                <!-- Honeypot -->
                 <p style="display:none;">
                   <label>
                     Don’t fill this out if you’re human:
@@ -215,151 +216,129 @@
 
                   <!-- Row 1: First / Last -->
                   <li class="ac-row" aria-label="Name fields">
-                    <!-- First Name -->
-                    <div id="field_contact_first_name"
-                      class="gfield gfield--type-text gfield--width-full gfield_contains_required gfield_visibility_visible">
-                      <label class="gfield_label gform-field-label" for="input_contact_first_name">
-                        First Name
-                        <span class="gfield_required"><span
-                            class="gfield_required gfield_required_asterisk">*</span></span>
+                    <div class="gfield gfield_contains_required">
+                      <label class="gfield_label" for="input_contact_first_name">
+                        First Name<span class="gfield_required">*</span>
                       </label>
-                      <div class="ginput_container ginput_container_text">
-                        <input type="text" name="first_name" id="input_contact_first_name" class="large"
-                          placeholder="First Name" required aria-required="true" autocomplete="given-name" />
-                      </div>
+                      <input type="text" name="first_name" id="input_contact_first_name" class="large"
+                        placeholder="First Name" required autocomplete="given-name" />
                     </div>
 
-                    <!-- Last Name -->
-                    <div id="field_contact_last_name"
-                      class="gfield gfield--type-text gfield--width-full gfield_contains_required gfield_visibility_visible">
-                      <label class="gfield_label gform-field-label" for="input_contact_last_name">
-                        Last Name
-                        <span class="gfield_required"><span
-                            class="gfield_required gfield_required_asterisk">*</span></span>
+                    <div class="gfield gfield_contains_required">
+                      <label class="gfield_label" for="input_contact_last_name">
+                        Last Name<span class="gfield_required">*</span>
                       </label>
-                      <div class="ginput_container ginput_container_text">
-                        <input type="text" name="last_name" id="input_contact_last_name" class="large"
-                          placeholder="Last Name" required aria-required="true" autocomplete="family-name" />
-                      </div>
+                      <input type="text" name="last_name" id="input_contact_last_name" class="large"
+                        placeholder="Last Name" required autocomplete="family-name" />
                     </div>
                   </li>
 
                   <!-- Row 2: Business / Email -->
                   <li class="ac-row" aria-label="Company and email fields">
-                    <!-- Business Name -->
-                    <div id="field_contact_business_name"
-                      class="gfield gfield--type-text gfield--width-full gfield_contains_required gfield_visibility_visible">
-                      <label class="gfield_label gform-field-label" for="input_contact_business_name">
-                        Business Name
-                        <span class="gfield_required"><span
-                            class="gfield_required gfield_required_asterisk">*</span></span>
+                    <div class="gfield gfield_contains_required">
+                      <label class="gfield_label" for="input_contact_business_name">
+                        Business Name<span class="gfield_required">*</span>
                       </label>
-                      <div class="ginput_container ginput_container_text">
-                        <input name="business_name" id="input_contact_business_name" type="text" class="large"
-                          placeholder="Business Name" required aria-required="true" autocomplete="organization" />
-                      </div>
+                      <input type="text" name="business_name" id="input_contact_business_name" class="large"
+                        placeholder="Business Name" required autocomplete="organization" />
                     </div>
 
-                    <!-- Email -->
-                    <div id="field_contact_email"
-                      class="gfield gfield--type-email gfield--width-full gfield_contains_required gfield_visibility_visible">
-                      <label class="gfield_label gform-field-label" for="input_contact_email">
-                        Email
-                        <span class="gfield_required"><span
-                            class="gfield_required gfield_required_asterisk">*</span></span>
+                    <div class="gfield gfield_contains_required">
+                      <label class="gfield_label" for="input_contact_email">
+                        Email<span class="gfield_required">*</span>
                       </label>
-                      <div class="ginput_container ginput_container_email">
-                        <input name="email" id="input_contact_email" type="email" class="large" placeholder="Email"
-                          required aria-required="true" autocomplete="email" />
-                      </div>
+                      <input type="email" name="email" id="input_contact_email" class="large" placeholder="Email"
+                        required autocomplete="email" />
                     </div>
                   </li>
 
                   <!-- Row 3: Role / Help -->
                   <li class="ac-row" aria-label="Role and help topic fields">
-                    <!-- Role -->
-                    <div id="field_contact_role"
-                      class="gfield gfield--type-select gfield--width-full gfield_contains_required gfield_visibility_visible">
-                      <label class="gfield_label gform-field-label" for="input_contact_role">
-                        What's Your Role?
-                        <span class="gfield_required"><span
-                            class="gfield_required gfield_required_asterisk">*</span></span>
+                    <div class="gfield gfield_contains_required">
+                      <label class="gfield_label" for="input_contact_role">
+                        What’s Your Role?<span class="gfield_required">*</span>
                       </label>
-                      <div class="ginput_container ginput_container_select">
-                        <select name="role" id="input_contact_role" class="large gfield_select" required
-                          aria-required="true">
-                          <option value="" selected class="gf_placeholder">What's Your Role?</option>
-                          <option value="Business Owner/Partner">Business Owner/Partner</option>
-                          <option value="VP/Executive Leadership">VP/Executive Leadership</option>
-                          <option value="Marketing Director/Manager">Marketing Director/Manager</option>
-                          <option value="MarComm/PR">MarComm/PR</option>
-                          <option value="Sales">Sales</option>
-                          <option value="Other">Other</option>
-                        </select>
-                      </div>
+                      <select name="role" id="input_contact_role" class="large gfield_select" required>
+                        <option value="">What’s Your Role?</option>
+                        <option value="Business Owner/Partner">Business Owner/Partner</option>
+                        <option value="VP/Executive Leadership">VP/Executive Leadership</option>
+                        <option value="Marketing Director/Manager">Marketing Director/Manager</option>
+                        <option value="MarComm/PR">MarComm/PR</option>
+                        <option value="Sales">Sales</option>
+                        <option value="Other">Other</option>
+                      </select>
                     </div>
 
-                    <!-- How Can We Help -->
-                    <div id="field_contact_help"
-                      class="gfield gfield--type-select gfield--width-full gfield_contains_required gfield_visibility_visible">
-                      <label class="gfield_label gform-field-label" for="input_contact_help">
-                        How Can We Help?
-                        <span class="gfield_required"><span
-                            class="gfield_required gfield_required_asterisk">*</span></span>
+                    <div class="gfield gfield_contains_required">
+                      <label class="gfield_label" for="input_contact_help">
+                        How Can We Help?<span class="gfield_required">*</span>
                       </label>
-                      <div class="ginput_container ginput_container_select">
-                        <select name="help_topic" id="input_contact_help" class="large gfield_select" required
-                          aria-required="true">
-                          <option value="" selected class="gf_placeholder">How Can We Help?</option>
-                          <option value="Sales - Book a Discovery Call">Sales - Book a Discovery Call</option>
-                          <option value="Partnership/Vendor - Becoming a vendor, partner, supplier">Partnership/Vendor -
-                            Becoming a vendor, partner, supplier</option>
-                          <option value="Other - I have a question not associated with the items above">Other - I have a
-                            question not associated with the items above</option>
-                        </select>
-                      </div>
+                      <select name="help_topic" id="input_contact_help" class="large gfield_select" required>
+                        <option value="">How Can We Help?</option>
+                        <option value="Sales - Book a Discovery Call">Sales - Book a Discovery Call</option>
+                        <option value="Partnership/Vendor - Becoming a vendor, partner, supplier">
+                          Partnership/Vendor – Becoming a vendor, partner, supplier
+                        </option>
+                        <option value="Other - I have a question not associated with the items above">
+                          Other – I have a question
+                        </option>
+                      </select>
                     </div>
                   </li>
 
-                  <!-- Additional Details (full width) -->
-                  <li id="field_contact_message"
-                    class="gfield gfield--type-textarea gfield--width-full gfield_visibility_visible">
-                    <label class="gfield_label gform-field-label" for="input_contact_message">
+                  <!-- Message -->
+                  <li class="gfield gfield--width-full mt-20">
+                    <label class="gfield_label" for="input_contact_message">
                       Anything additional you'd like to add?
                     </label>
-                    <div class="ginput_container ginput_container_textarea">
-                      <textarea name="message" id="input_contact_message" class="textarea medium"
-                        placeholder="Anything additional you'd like to add?" rows="8" cols="50"></textarea>
-                    </div>
+                    <textarea name="message" id="input_contact_message" class="textarea medium"
+                      placeholder="Anything additional you'd like to add?" rows="8"></textarea>
                   </li>
 
-                  <!-- Consent (full width) -->
-                  <li id="field_contact_consent"
-                    class="gfield gfield--type-consent gfield--width-full gfield_contains_required gfield_visibility_visible">
-                    <div class="gfield_description gfield_consent_description"
-                      id="gfield_consent_description_contact_consent" tabindex="0">
-                      By submitting this form, you agree to the <a href="../legal/privacy.html">Privacy Policy</a> and consent
-                      to receiving emails from Abstract Creative.
-                    </div>
+                  <!-- Consent -->
+<li id="field_contact_consent"
+  class="gfield gfield--type-consent gfield--width-full gfield_contains_required gfield_visibility_visible">
 
-                    <div class="ginput_container ginput_container_consent">
-                      <input name="consent" id="input_contact_consent" type="checkbox" value="1" required
-                        aria-describedby="gfield_consent_description_contact_consent" aria-required="true" />
-                      <label class="gform-field-label gform-field-label--type-inline gfield_consent_label"
-                        for="input_contact_consent">
-                        I agree to the privacy policy.
-                      </label>
-                    </div>
-                  </li>
+  <div class="gfield_description gfield_consent_description"
+    id="gfield_consent_description_contact_consent" tabindex="0">
+    By submitting this form, you agree to the
+    <a href="/legal/privacy.html">Privacy Policy</a>
+    and consent to receiving emails from Abstract Creative.
+  </div>
 
-                  <!-- Submit -->
-                   <div class="col-md-6 mx-auto">
-                  <li class="gfield gform_footer top_label">
-                    <button type="submit" class="btn-one alink5 w-100 text-center mt-10" id="gform_submit_button_contact">
-                      Submit
-                    </button>
-                  </li>
-</div>
+  <div class="ginput_container ginput_container_consent">
+    <input
+      type="checkbox"
+      name="consent"
+      id="input_contact_consent"
+      value="1"
+      required
+      aria-describedby="gfield_consent_description_contact_consent"
+      aria-required="true"
+    />
+    <label
+      class="gform-field-label gform-field-label--type-inline gfield_consent_label"
+      for="input_contact_consent"
+    >
+      I agree to the privacy policy.
+    </label>
+  </div>
+</li>
+<li class="gfield gform_footer top_label">
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <button
+        type="submit"
+        class="btn-one alink5 w-100 text-center mt-10"
+        id="gform_submit_button_contact"
+      >
+        Submit
+      </button>
+    </div>
+  </div>
+</li>
+
+
                 </ul>
               </form>
 
@@ -368,6 +347,7 @@
         </div>
       </div>
     </section>
+
   </main>
 
   <!-- Footer area start here -->
