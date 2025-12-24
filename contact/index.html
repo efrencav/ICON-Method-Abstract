@@ -2,6 +2,45 @@
 <html lang="en">
 
 <head>
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-P93WLQG');</script>
+  <!-- End Google Tag Manager -->
+  <script>
+    // Lightweight click instrumentation for GTM (GTM can also capture clicks without this)
+    document.addEventListener('click', function (e) {
+      var el = e.target && e.target.closest ? e.target.closest('[data-track]') : null;
+      if (!el) return;
+      var payload = {
+        event: "ui_interaction",
+        trackType: el.getAttribute('data-track'),
+        elementId: el.id || null,
+        cta: el.getAttribute('data-cta') || null,
+        nav: el.getAttribute('data-nav') || null,
+        network: el.getAttribute('data-network') || null,
+        location: el.getAttribute('data-location') || null,
+        href: el.getAttribute('href') || null,
+        text: (el.textContent || "").trim().slice(0, 80)
+      };
+      try { window.dataLayer = window.dataLayer || []; window.dataLayer.push(payload); } catch (err) { }
+    }, true);
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GD7MW94M5V"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-GD7MW94M5V');
+  </script>
   <meta charset="UTF-8" />
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -464,6 +503,9 @@
   <script src="../assets/js/jquery.waypoints.js"></script>
   <!-- Script Js -->
   <script src="../assets/js/script.js"></script>
+  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/242365592.js"></script>
+  <!-- End of HubSpot Embed Code -->
 </body>
 
 </html>
