@@ -5206,27 +5206,33 @@ img {
 }
 
 .service-two__right-item .icon {
-  width: 100px;
-  height: 100px;
-  line-height: 100px;
+  width: 72px;
+  height: 72px;
+  line-height: 72px;
   text-align: center;
   border-radius: 50%;
   transition: var(--transition);
-  max-width: 100px;
+  max-width: 72px;
   width: 100%;
   background-color: #f1f5f5;
+}
+
+.service-two__right-item {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 30px; /* space between tiles */
 }
 
 .service-two__right-item .item {
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 20px;
   padding-bottom: 40px;
   border-bottom: var(--border-1px);
 }
 
 .service-two__right-item .item:not(:last-child) {
-  margin-bottom: 40px;
+  /* margin-bottom: 40px; */
 }
 
 @media (max-width: 575px) {
