@@ -12963,3 +12963,60 @@ h2 {
     max-width: 100%;
   }
 }
+
+/* Base — Mobile first */
+.hero-eyebrow {
+  font-family: "Public Sans", system-ui, -apple-system, sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.2;
+  margin-top: 1rem;
+  margin-bottom: 1.25rem;
+  opacity: 0.85;
+  max-width: 34ch;
+}
+
+/* Small phones ≥ 480px */
+@media (min-width: 480px) {
+  .hero-eyebrow {
+    font-size: 0.75rem;
+    max-width: 42ch;
+  }
+}
+
+/* Tablets ≥ 768px */
+@media (min-width: 768px) {
+  .hero-eyebrow {
+    font-size: 0.8rem;
+    letter-spacing: 0.09em;
+    max-width: 56ch;
+  }
+}
+
+/* Desktop ≥ 1024px */
+@media (min-width: 1024px) {
+  .hero-eyebrow {
+    font-size: 1.1em;          /* your change */
+    letter-spacing: 0.08em;   /* slight pullback for readability */
+    max-width: 150ch;         /* KEY: widened for 1.2em */
+    white-space: normal;
+  }
+}
+
+/* Large desktop ≥ 1280px */
+@media (min-width: 1280px) {
+  .hero-eyebrow {
+    max-width: 170ch;
+  }
+}
+
+/* Ultra-wide ≥ 1536px */
+@media (min-width: 1536px) {
+  .hero-eyebrow {
+    max-width: 190ch;
+    letter-spacing: 0.07em;
+  }
+}
+
