@@ -12855,7 +12855,7 @@ h2 {
 @media (max-width: 767px) {
   .disclaimer-text {
     font-size: 12px;
-    text-align: center;
+    text-align: left;
   }
 }
 
