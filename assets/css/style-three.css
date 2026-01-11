@@ -10057,7 +10057,7 @@ a {
 }
 
 .banner__content h1 span::after {
-  background-color: #F8961D;
+  background-color: #ffc422;
 }
 
 .banner__content h5 {
@@ -11948,6 +11948,11 @@ h1 {
     line-height: 38px;
   }
   
+@media (max-width: 575px) {
+  .banner__content h1 span::after {
+    bottom: 0; /* confirm visually */
+  }
+}
 
   h2,
   .cta-three-area .section-header2 .section-title,
