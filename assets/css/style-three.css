@@ -1815,7 +1815,7 @@ img {
 
 .accordion .accordion-button {
   background-color: transparent;
-  color: var(--main);
+  color: var(--primary-two);
 }
 
 .accordion .accordion-button::after {
@@ -1841,7 +1841,7 @@ img {
 
 .accordion .accordion-button.collapsed {
   background-color: transparent;
-  color: var(--main);
+  color: var(--primary-two);
 }
 
 .accordion .accordion-button.collapsed::before {
@@ -3114,7 +3114,7 @@ img {
 }
 
 .header__main .main-menu ul li .sub-menu.sub-menu-wide {
-  width: 350px;
+  width: 290px;
 }
 
 .header__main .main-menu ul li .sub-menu li {
@@ -8065,8 +8065,8 @@ img {
 
 .pricing__head {
   padding-bottom: 30px;
-  margin-bottom: 30px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1019607843);
+  /* margin-bottom: 30px; */
+  /* border-bottom: 1px solid rgba(255, 255, 255, 0.1019607843); */
 }
 
 .pricing__head .pricing-name {
@@ -10684,8 +10684,9 @@ h1 {
   font-size: 14px;
   line-height: 23px;
   text-align: left;
-  max-width: 1000px;
+  /* max-width: 1000px; */
   width: 100%;
+  color: #32373E;
   /* margin-left: 20%; */
 }
 
@@ -11167,7 +11168,7 @@ h1 {
   border-radius: var(--card-radius);
   background-clip: padding-box;
   box-shadow: 0 8px 24px rgba(0,0,0,0.05);
-  padding: 28px 22px 24px;
+  padding: 28px 42px 24px;
   padding-top: calc(var(--badge-size) / 2 + 10px); /* clear the badge */
   transition: transform .25s ease, box-shadow .25s ease;
 }
@@ -12963,6 +12964,8 @@ h2 {
     max-width: 100%;
   }
 }
+/* Icon font (Flaticon) */
+@import "../webfonts/flaticon.css";
 
 /* Base — Mobile first */
 .hero-eyebrow {
@@ -13020,3 +13023,13 @@ h2 {
   }
 }
 
+.medium-grey {
+    color: #32373E !important;
+}
+
+.tight-line {
+    line-height: 0.9;
+}
+.text-light-green {
+  color: #00b5b0 !important;
+}

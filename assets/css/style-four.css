@@ -6908,8 +6908,8 @@ img {
 }
 .pricing__head {
   padding-bottom: 30px;
-  margin-bottom: 30px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1019607843);
+  /* margin-bottom: 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1019607843); */
 }
 .pricing__head .pricing-name {
   font-size: 20px;
