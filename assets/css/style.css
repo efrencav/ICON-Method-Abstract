@@ -14523,6 +14523,38 @@ html {
     grid-template-columns: 1fr;
     gap: 24px;
   }
+
+  .principles-horizontal__text p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #ffffff;
+  text-align: left;
+}
+}
+
+@media (max-width: 575px) {
+  /* Override the container’s forced centering */
+  .started-area .section-header-two.text-center {
+    text-align: left !important;
+  }
+
+  /* Some components may be inline/centered independently */
+  .started-area .section-header-two.text-center .principles-horizontal,
+  .started-area .section-header-two.text-center .principles-horizontal__text {
+    text-align: left !important;
+  }
+
+  /* Keep the headline centered if you want */
+  .started-area .section-header-two.text-center > h3 {
+    text-align: center !important;
+  }
+
+  /* Keep the CTA centered if desired */
+  .started-area .section-header-two.text-center > a.btn-one {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 
@@ -14563,4 +14595,15 @@ html {
 
 .text-light-green {
   color: #00b5b0 !important;
+}
+
+@media (max-width: 575px) {
+  .steps-section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .steps-section .h2-xl {
+    line-height: 1.15;
+  }
 }
