@@ -14607,3 +14607,8 @@ html {
     line-height: 1.15;
   }
 }
+
+
+.border-3 {
+  border: 4px solid #EE4137;
+}
