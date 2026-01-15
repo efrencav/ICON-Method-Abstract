@@ -253,7 +253,9 @@ content="Strategic brand positioning, messaging, and growth systems for 6–50 p
   <!-- Mean menu css -->
   <link rel="stylesheet" href="https://abstract-creative.com/assets/css/meanmenu.css" />
   <!-- All min css -->
-  <link rel="stylesheet" href="./assets/css/all.min.css" />
+  <link rel="preload" href="./assets/css/all.min.css" as="style">
+  <link rel="stylesheet" href="./assets/css/all.min.css" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="./assets/css/all.min.css" /></noscript>
   <link rel="stylesheet" href="https://abstract-creative.com/assets/css/swiper-bundle.min.css" />
   <!-- Animate css -->
   <link rel="stylesheet" href="https://abstract-creative.com/assets/css/animate.css" />
