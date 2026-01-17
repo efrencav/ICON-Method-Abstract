@@ -3,88 +3,7 @@
 
 <head>
   <!-- Google Tag Manager -->
-  <script>(function (w, d, s, l, i) {
-      w[l] = w[l] || []; w[l].push({
-        'gtm.start':
-          new Date().getTime(), event: 'gtm.js'
-      }); var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-P93WLQG');</script>
-  <!-- End Google Tag Manager -->
-  <script>
-    // Lightweight click instrumentation for GTM (GTM can also capture clicks without this)
-    document.addEventListener('click', function (e) {
-      var el = e.target && e.target.closest ? e.target.closest('[data-track]') : null;
-      if (!el) return;
-      var payload = {
-        event: "ui_interaction",
-        trackType: el.getAttribute('data-track'),
-        elementId: el.id || null,
-        cta: el.getAttribute('data-cta') || null,
-        nav: el.getAttribute('data-nav') || null,
-        network: el.getAttribute('data-network') || null,
-        location: el.getAttribute('data-location') || null,
-        href: el.getAttribute('href') || null,
-        text: (el.textContent || "").trim().slice(0, 80)
-      };
-      try { window.dataLayer = window.dataLayer || []; window.dataLayer.push(payload); } catch (err) { }
-    }, true);
-  </script>
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GD7MW94M5V"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'G-GD7MW94M5V');
-  </script>
-  <meta charset="UTF-8" />
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    dataLayer.push({
-      pageType: "contact",
-      expertiseCategory: "contact",
-    });
-  </script>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="robots" content="index,follow" />
-  <title>Contact | Abstract Creative</title>
-  <meta name="description"
-    content="Contact Abstract Creative to align your brand, messaging, and growth systems with the ICON Method.">
-  <link rel="canonical" href="https://abstract-creative.com/contact/" />
-
-  <!-- Favicon img -->
-  <link rel="shortcut icon" href="../assets/images/favicon.png" />
-  <!-- Bootstarp min css -->
-  <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
-  <!-- Mean menu css -->
-  <link rel="stylesheet" href="../assets/css/meanmenu.min.css" />
-  <!-- All min css -->
-  <link rel="stylesheet" href="../assets/css/all.min.css" />
-  <!-- Swiper bundle min css -->
-  <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css" />
-  <!-- Magnigic popup css -->
-  <link rel="stylesheet" href="../assets/css/magnific-popup.css" />
-  <!-- Animate css -->
-  <link rel="stylesheet" href="../assets/css/animate.css" />
-  <!-- Nice select css -->
-  <link rel="stylesheet" href="../assets/css/nice-select.min.css" />
-  <!-- Style css -->
-  <link rel="stylesheet" href="../assets/css/style.css" />
-
-<script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "v03bb2ll0d");
-</script>
+  
 </head>
 
 <body>
@@ -150,17 +69,9 @@
         <div id="primary-nav" class="main-menu main-menu-light">
           <nav>
             <ul>
-              <li><a id="nav_services" data-track="nav" data-nav="services" href="../services/services-overview.html">Services <i class="fa-solid fa-angle-down"></i></a>
-                <ul class="sub-menu">
-                  <li><a href="../services/foundation.html">Foundation</a></li>
-                  <li><a href="../services/pro-growth.html">Pro Growth</a></li>
-                  <li><a href="../services/market-authority.html">Market Authority</a></li>
-                  <li><a href="../services/add-ons.html">Add-ons</a></li>
-                </ul>
-              </li>
-              <li>
-                <a id="nav_work" data-track="nav" data-nav="work" href="../work/index.html">Work</a>
-              </li>
+              <li><a id="nav_how_we_work" data-track="nav" data-nav="how_we_work"
+                                href="../offer/index.html">How We Work</a>
+                            </li>
               <li>
                 <a id="nav_icon_method" data-track="nav" data-nav="icon_method" href="../icon-method/index.html">ICON Method</a>
               </li>
@@ -172,7 +83,7 @@
         </div>
         <a id="cta_book_strategy_call_header" href="../contact/index.html"
           class="btn-menu d-none d-lg-inline-block" data-track="cta" data-cta="book_strategy_call"
-          data-location="header">Book a Brand Decision Session<i class="fa-regular fa-circle-arrow-right ml-10"></i></a>
+          data-location="header">Request a Strategic Fit Call<i class="fa-regular fa-circle-arrow-right ml-10"></i></a>
         <div class="bars d-block d-lg-none">
           <i id="openButton" class="fa-solid fa-bars"></i>
         </div>
@@ -408,8 +319,7 @@
                     alt="Abstract Creative white logo – strategic brand partner" />
                 </a>
                 <p>
-                   Abstract Creative is a brand strategy consultancy helping leadership teams align positioning,
-  messaging, and marketing systems — and govern growth as complexity increases.
+                   Abstract Creative is a brand strategy consultancy that installs and governs positioning, brand, and growth systems — so leadership teams can scale without drift.
                 </p>
                 <div class="social-icon mt-20">
                   <a href="https://www.facebook.com/AbstractCreative"><i class="fa-brands fa-facebook-f"></i></a>
@@ -426,12 +336,7 @@
                   <li>
                     <a href="../about/index.html">About</a>
                   </li>
-                  <li>
-                    <a href="../icon-method/index.html">ICON Method</a>
-                  </li>
-                  <li>
-                    <a href="../services/services-overview.html">Services Overview</a>
-                  </li>
+                  <li><a href="https://abstract-creative.com/offer/index.html">How We Work</a></li>
 
                   <li>
                     <a href="../work/index.html">Work</a>
@@ -474,8 +379,7 @@
         <p class="wow fadeInDown" data-wow-delay="400ms" data-wow-duration="1000ms">
           © 2017–2026 <a class="primary-hover medium-grey" href="../index.html">Abstract Creative</a> LLC. All rights
           reserved.
-          ICON Method, Foundation, Pro Growth, and Market Authority are
-          proprietary trademarks of Abstract Creative.
+          
         </p>
       </div>
     </div>

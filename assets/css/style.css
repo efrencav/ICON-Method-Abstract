@@ -3682,7 +3682,7 @@ img {
 
 
 .banner__content {
-  max-width: 560px;
+  max-width: 750px;
 }
 
 .banner__content h1 span {
@@ -3799,7 +3799,7 @@ img {
 
 .banner-inner-area {
   overflow: hidden;
-  background-color: #020D0A;
+  background-color: #32373E;
 }
 
 .banner-inner__content {

@@ -12852,6 +12852,14 @@ h2 {
   width: 500px;
   /* letter-spacing: 0.3px; */
 }
+.disclaimer-text-centered {
+  font-size: 13px;
+  color: rgba(1, 1, 1, 0.4);
+  margin-top: 15px;
+  line-height: 1.2;
+  text-align: center !important;
+  /* letter-spacing: 0.3px; */
+}
 
 .banner-area .disclaimer-text {
   font-family: 'Public Sans', sans-serif;
@@ -13122,4 +13130,53 @@ h2 {
     bottom: 35px;
     z-index: 10;                /* above hero background */
   }
+}
+
+.principles-horizontal {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.principles-horizontal__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.principles-horizontal__number {
+  font-size: 4.5rem;
+  font-weight: 700;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.2); /* adjust for dark bg if needed */
+  flex-shrink: 0;
+}
+
+.principles-horizontal__text h4 {
+  margin-bottom: 6px;
+  font-weight: 700;
+  color: #00b5b0;
+}
+
+.principles-horizontal__text p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #ffffff;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .principles-horizontal {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .principles-horizontal__text p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #ffffff;
+  text-align: left;
+}
 }
