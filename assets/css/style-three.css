@@ -179,7 +179,7 @@ h6 {
 
 h1 {
   font-size: 64px;
-  line-height: 80px;
+  line-height: 68px;
 }
 
 @media (max-width: 767px) {
@@ -12986,8 +12986,8 @@ h2 {
   font-family: "Public Sans", system-ui, -apple-system, sans-serif;
   font-size: 0.7rem;
   font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  /* letter-spacing: 0.08em; */
+  /* text-transform: uppercase; */
   line-height: 1.2;
   margin-top: 1rem;
   margin-bottom: 1.25rem;
@@ -13007,7 +13007,7 @@ h2 {
 @media (min-width: 768px) {
   .hero-eyebrow {
     font-size: 0.8rem;
-    letter-spacing: 0.09em;
+    /* letter-spacing: 0.09em; */
     max-width: 56ch;
   }
 }
@@ -13016,7 +13016,7 @@ h2 {
 @media (min-width: 1024px) {
   .hero-eyebrow {
     font-size: 1.1em;          /* your change */
-    letter-spacing: 0.08em;   /* slight pullback for readability */
+    /* letter-spacing: 0.08em;  */
     max-width: 150ch;         /* KEY: widened for 1.2em */
     white-space: normal;
   }
@@ -13033,7 +13033,7 @@ h2 {
 @media (min-width: 1536px) {
   .hero-eyebrow {
     max-width: 190ch;
-    letter-spacing: 0.07em;
+    /* letter-spacing: 0.07em; */
   }
 }
 
